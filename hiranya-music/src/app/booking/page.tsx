@@ -14,6 +14,8 @@ export default function BookingPage() {
         message: ''
     });
 
+    const [whatsAppMessage, setWhatsAppMessage] = useState('');
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         // In a real app, this would send the email
@@ -98,16 +100,23 @@ export default function BookingPage() {
                                 <span>Instant Inquiry</span>
                             </h3>
                             <p className="text-foreground/60 text-sm mb-6 font-light">
-                                Prefer a quick chat? Message Hiranya directly on WhatsApp for availability and rates.
+                                Prefer a quick chat? Type your message below and send it directly via WhatsApp.
                             </p>
+                            <textarea
+                                rows={3}
+                                className="w-full bg-background/50 border border-gold-primary/10 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-gold-primary transition-all resize-none mb-4"
+                                placeholder="Hi Hiranya, I'd like to inquire about..."
+                                value={whatsAppMessage}
+                                onChange={(e) => setWhatsAppMessage(e.target.value)}
+                            />
                             <a
-                                href="https://wa.me/94724392750"
+                                href={`https://wa.me/94724392750${whatsAppMessage.trim() ? `?text=${encodeURIComponent(whatsAppMessage.trim())}` : ''}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 rounded-xl space-x-2 transition-all"
                             >
                                 <MessageCircle size={20} fill="white" />
-                                <span>WHATSAPP NOW</span>
+                                <span>SEND VIA WHATSAPP</span>
                             </a>
                         </div>
                     </motion.div>
