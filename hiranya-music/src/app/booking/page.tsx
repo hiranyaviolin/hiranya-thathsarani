@@ -101,7 +101,7 @@ export default function BookingPage() {
                                 Prefer a quick chat? Message Hiranya directly on WhatsApp for availability and rates.
                             </p>
                             <a
-                                href="https://wa.me/94771234567"
+                                href="https://wa.me/94712219310"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 rounded-xl space-x-2 transition-all"
