@@ -8,27 +8,27 @@ import { cn } from '@/lib/utils';
 const categories = [
   { id: 'all', name: 'All' },
   { id: 'events', name: 'Events' },
-  { id: 'promotions', name: 'Promos & Collabs' },
+  { id: 'promos & collabs', name: 'Promos & Collabs' },
   { id: 'highlights', name: 'Highlights' },
 ];
 
 const musicWorks = [
     {
-        title: "The walk model - violin performance",
+        title: "The Walk Model - Violin Performance",
         category: "events",
         type: "video",
         image: "/performances/21.jpeg",
         video:"",
     },
     {
-        title: "Paid Partnership - Shanuka Ekanayake song",
-        category: "promotions",
+        title: "Collaboration with Shanuka Ekanayake",
+        category: "promos & collabs",
         type: "video",
         image: "",
         video:"",
     },
     {
-        title: "⁠Collaborations with artists - Hiru",
+        title: "⁠Collaboration with artists - Hiru",
         category: "highlights",
         type: "video",
         image: "/performances/19.jpeg",
@@ -50,7 +50,7 @@ const musicWorks = [
     },
     {
         title: "⁠Melody Composing - Ma Soyana",
-        category: "promotions",
+        category: "promos & collabs",
         type: "video",
         image: "",
         video:"",
@@ -71,21 +71,21 @@ const musicWorks = [
     },
     {
         title: "⁠Participation to Asia Violin Summit",
-        category: "promotions",
+        category: "promos & collabs",
         type: "video",
         image: "",
         video:"",
     },
     {
-        title: "⁠Paid Promotion with AKHTARJ",
-        category: "promotions",
+        title: "Collaboration with AKHTARJ",
+        category: "promos & collabs",
         type: "video",
         image: "",
         video:"",
     },
     {
         title: "Violin Parts Playing - with Ayodhya video",
-        category: "promotions",
+        category: "promos & collabs",
         type: "video",
         image: "",
         video:"",
@@ -105,21 +105,21 @@ const musicWorks = [
         video:"",
     },
     {
-        title: "Paid Partnership with Panthera Styles",
-        category: "promotions",
+        title: "Panthera Styles - Clothing Store",
+        category: "promos & collabs",
         type: "video",
         image: "",
         video:"",
     },
     {
-        title: "Bizenglish Ada Derana magazine ",
+        title: "Bizenglish Ada Derana Magazine ",
         category: "highlights",
         type: "video",
         image: "/performances/7.jpeg",
         video:"",
     },
     {
-        title: "Charana TV performance",
+        title: "Charana TV Performance",
         category: "highlights",
         type: "video",
         image: "",
@@ -133,8 +133,8 @@ const musicWorks = [
         video:"",
     },
     {
-        title: "⁠Paid Promotion with The Garden Fusion Cafe",
-        category: "promotions",
+        title: "Collaboration with The Garden Fusion Cafe",
+        category: "promos & collabs",
         type: "video",
         image: "/performances/4.jpeg",
         video:"",
@@ -243,7 +243,7 @@ export default function MusicPage() {
                                     </span>
                                     {/* <span className="text-foreground/40 text-[10px] font-mono">{work.duration}</span> */}
                                 </div>
-                                <h3 className="text-xl font-bold group-hover:text-gold-primary transition-colors line-clamp-1">
+                                <h3 className="text-xl font-bold group-hover:text-gold-primary transition-colors line-clamp-2">
                                     {work.title}
                                 </h3>
 

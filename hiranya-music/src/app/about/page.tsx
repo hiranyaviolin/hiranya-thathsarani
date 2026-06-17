@@ -18,7 +18,7 @@ export default function AboutPage() {
                         className="flex-1 relative"
                     >
                         <div className="aspect-[3/4] rounded-2xl overflow-hidden glass border-gold-primary/10">
-                            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541626395124-219ec94723c1?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center grayscale" />
+                            <div className="absolute inset-0 bg-[url('/hero-bg2.png')] bg-cover bg-center" />
                         </div>
                         <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-gold-primary rounded-full blur-[100px] opacity-20" />
                     </motion.div>
