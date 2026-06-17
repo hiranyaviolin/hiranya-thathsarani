@@ -14,9 +14,11 @@ const playfair = Playfair_Display({
   variable: "--font-serif",
 });
 
+import { METADATA } from "@/constants/metadata";
+
 export const metadata: Metadata = {
-  title: "Hiranya | Professional Sri Lankan Violinist",
-  description: "Experience the soul of the violin with Hiranya, blending Western classical mastery with the vibrant musical heritage of Sri Lanka.",
+  title: METADATA.title,
+  description: METADATA.description,
 };
 
 export default function RootLayout({

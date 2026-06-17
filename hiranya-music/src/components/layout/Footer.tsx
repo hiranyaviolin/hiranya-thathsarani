@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { Music, Instagram, Youtube, Facebook, Mail, Phone } from 'lucide-react';
+import { VARIABLES } from "@/constants/variables";
+import { FOOTER } from "@/constants/layout";
 
 export default function Footer() {
     return (
@@ -13,20 +15,19 @@ export default function Footer() {
                             <div className="w-8 h-8 bg-gold-primary rounded-full flex items-center justify-center text-background">
                                 <Music size={16} />
                             </div>
-                            <span className="text-xl font-serif font-bold text-gold-primary">HIRANYA</span>
+                            <span className="text-xl font-serif font-bold text-gold-primary">{FOOTER.brand}</span>
                         </Link>
                         <p className="text-foreground/60 text-sm leading-relaxed mb-6">
-                            Blending Western Classical elegance with the rich musical heritage of Sri Lanka.
-                            Bringing the soul of the violin to every stage.
+                            {FOOTER.brandDescription}
                         </p>
                         <div className="flex space-x-4">
-                            <Link href="#" className="w-10 h-10 rounded-full glass flex items-center justify-center text-gold-primary hover:bg-gold-primary hover:text-background transition-all">
+                            <Link href={VARIABLES.instagramUrl} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass flex items-center justify-center text-gold-primary hover:bg-gold-primary hover:text-background transition-all">
                                 <Instagram size={18} />
                             </Link>
-                            <Link href="#" className="w-10 h-10 rounded-full glass flex items-center justify-center text-gold-primary hover:bg-gold-primary hover:text-background transition-all">
+                            <Link href={VARIABLES.youtubeUrl} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass flex items-center justify-center text-gold-primary hover:bg-gold-primary hover:text-background transition-all">
                                 <Youtube size={18} />
                             </Link>
-                            <Link href="#" className="w-10 h-10 rounded-full glass flex items-center justify-center text-gold-primary hover:bg-gold-primary hover:text-background transition-all">
+                            <Link href={VARIABLES.facebookUrl} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass flex items-center justify-center text-gold-primary hover:bg-gold-primary hover:text-background transition-all">
                                 <Facebook size={18} />
                             </Link>
                         </div>
@@ -34,9 +35,9 @@ export default function Footer() {
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-gold-primary font-serif font-bold mb-6 uppercase tracking-wider text-sm">Navigation</h4>
+                        <h4 className="text-gold-primary font-serif font-bold mb-6 uppercase tracking-wider text-sm">{FOOTER.navTitle}</h4>
                         <ul className="space-y-4">
-                            {['Home', 'About', 'Music', 'Events', 'Lessons'].map((item) => (
+                            {FOOTER.navItems.map((item) => (
                                 <li key={item}>
                                     <Link href={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`} className="text-foreground/60 hover:text-gold-primary transition-colors text-sm">
                                         {item}
@@ -48,19 +49,19 @@ export default function Footer() {
 
                     {/* Contact */}
                     <div>
-                        <h4 className="text-gold-primary font-serif font-bold mb-6 uppercase tracking-wider text-sm">Contact</h4>
+                        <h4 className="text-gold-primary font-serif font-bold mb-6 uppercase tracking-wider text-sm">{FOOTER.contactTitle}</h4>
                         <ul className="space-y-4">
                             <li className="flex items-center space-x-3 text-foreground/60 text-sm">
                                 <Mail size={16} className="text-gold-primary" />
-                                <span>info@hiranyamusic.com</span>
+                                <span>{VARIABLES.email}</span>
                             </li>
                             <li className="flex items-center space-x-3 text-foreground/60 text-sm">
                                 <Phone size={16} className="text-gold-primary" />
-                                <span>+94 77 123 4567</span>
+                                <span>{VARIABLES.phone}</span>
                             </li>
                             <li className="mt-4">
                                 <Link href="/booking" className="text-gold-primary hover:underline text-sm font-bold">
-                                    Book for Events →
+                                    {FOOTER.bookEventsLink}
                                 </Link>
                             </li>
                         </ul>
@@ -68,26 +69,26 @@ export default function Footer() {
 
                     {/* Newsletter (Simplified) */}
                     <div>
-                        <h4 className="text-gold-primary font-serif font-bold mb-6 uppercase tracking-wider text-sm">Newsletter</h4>
-                        <p className="text-foreground/60 text-sm mb-4">Stay updated with upcoming concerts and new releases.</p>
+                        <h4 className="text-gold-primary font-serif font-bold mb-6 uppercase tracking-wider text-sm">{FOOTER.newsletterTitle}</h4>
+                        <p className="text-foreground/60 text-sm mb-4">{FOOTER.newsletterText}</p>
                         <div className="flex flex-col space-y-2">
                             <input
                                 type="email"
-                                placeholder="Your email address"
+                                placeholder={FOOTER.newsletterPlaceholder}
                                 className="bg-background border border-gold-primary/20 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-gold-primary"
                             />
                             <button className="bg-gold-primary text-background font-bold py-2 rounded-lg text-sm hover:bg-gold-secondary transition-all">
-                                Subscribe
+                                {FOOTER.newsletterSubscribe}
                             </button>
                         </div>
                     </div>
                 </div>
 
                 <div className="border-t border-gold-primary/5 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-foreground/40 uppercase tracking-widest">
-                    <p>© 2024 Hiranya Music. All Rights Reserved.</p>
+                    <p>{FOOTER.copyright}</p>
                     <div className="flex space-x-6 mt-4 md:mt-0">
-                        <Link href="#" className="hover:text-gold-primary transition-colors">Privacy Policy</Link>
-                        <Link href="#" className="hover:text-gold-primary transition-colors">Terms of Service</Link>
+                        <Link href="#" className="hover:text-gold-primary transition-colors">{FOOTER.privacyPolicy}</Link>
+                        <Link href="#" className="hover:text-gold-primary transition-colors">{FOOTER.termsOfService}</Link>
                     </div>
                 </div>
             </div>

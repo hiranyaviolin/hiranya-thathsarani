@@ -6,14 +6,7 @@ import { Menu, X, Music } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
-const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Music', href: '/music' },
-    { name: 'Events', href: '/events' },
-    { name: 'Lessons', href: '/lessons' },
-    { name: 'Booking', href: '/booking' },
-];
+import { NAVBAR } from "@/constants/layout";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -44,17 +37,17 @@ export default function Navbar() {
                     </motion.div>
                     <div className="flex flex-col">
                         <span className="text-xl font-serif font-bold tracking-tight text-gold-primary">
-                            HIRANYA
+                            {NAVBAR.brand}
                         </span>
                         <span className="text-[10px] tracking-[0.2em] uppercase text-foreground/60 leading-none">
-                            Violinist
+                            {NAVBAR.brandSubtitle}
                         </span>
                     </div>
                 </Link>
 
                 {/* Desktop Nav */}
                 <div className="hidden md:flex items-center space-x-8">
-                    {navLinks.map((link) => (
+                    {NAVBAR.links.map((link) => (
                         <Link
                             key={link.name}
                             href={link.href}
@@ -67,7 +60,7 @@ export default function Navbar() {
                         href="/booking"
                         className="bg-gold-primary hover:bg-gold-secondary text-background px-6 py-2 rounded-full text-sm font-bold transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-gold-primary/20"
                     >
-                        BOOK NOW
+                        {NAVBAR.bookNow}
                     </Link>
                 </div>
 
@@ -89,7 +82,7 @@ export default function Navbar() {
                         exit={{ opacity: 0, y: -20 }}
                         className="absolute top-full left-0 right-0 glass border-t border-gold-primary/10 flex flex-col p-6 space-y-4 md:hidden shadow-2xl"
                     >
-                        {navLinks.map((link) => (
+                        {NAVBAR.links.map((link) => (
                             <Link
                                 key={link.name}
                                 href={link.href}
@@ -104,7 +97,7 @@ export default function Navbar() {
                             onClick={() => setIsOpen(false)}
                             className="bg-gold-primary text-background text-center py-4 rounded-xl font-bold mt-4"
                         >
-                            BOOK NOW
+                            {NAVBAR.bookNow}
                         </Link>
                     </motion.div>
                 )}

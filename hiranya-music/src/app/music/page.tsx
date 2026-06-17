@@ -6,55 +6,160 @@ import { Play, Music, Film, Globe, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const categories = [
-    { id: 'all', name: 'All Works' },
-    { id: 'classical', name: 'Classical' },
-    { id: 'sri-lankan', name: 'Sri Lankan' },
-    { id: 'fusion', name: 'Fusion' },
+  { id: 'all', name: 'All' },
+  { id: 'events', name: 'Events' },
+  { id: 'promotions', name: 'Promos & Collabs' },
+  { id: 'highlights', name: 'Highlights' },
 ];
 
 const musicWorks = [
     {
-        title: "Beethoven's Violin Sonata No. 9",
-        category: "classical",
-        type: "audio",
-        image: "https://images.unsplash.com/photo-1507838596018-bd7c368cba73?q=80&w=800&auto=format&fit=crop",
-        duration: "12:45"
-    },
-    {
-        title: "Danno Budunge (Contemporary Solo)",
-        category: "sri-lankan",
+        title: "The walk model - violin performance",
+        category: "events",
         type: "video",
-        image: "https://images.unsplash.com/photo-1514481909227-e54abc4da6ad?q=80&w=800&auto=format&fit=crop",
-        duration: "4:30"
+        image: "/performances/21.jpeg",
+        video:"",
     },
     {
-        title: "Ocean Breeze: Violin & Sitar Fusion",
-        category: "fusion",
-        type: "audio",
-        image: "https://images.unsplash.com/photo-1465804575741-338b8555e02f?q=80&w=800&auto=format&fit=crop",
-        duration: "6:15"
-    },
-    {
-        title: "Bach Partita No. 2 Premiere",
-        category: "classical",
+        title: "Paid Partnership - Shanuka Ekanayake song",
+        category: "promotions",
         type: "video",
-        image: "https://images.unsplash.com/photo-1541626395124-219ec94723c1?q=80&w=800&auto=format&fit=crop",
-        duration: "8:20"
+        image: "",
+        video:"",
     },
     {
-        title: "Kandy Perahera Rhythms",
-        category: "sri-lankan",
-        type: "audio",
-        image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop",
-        duration: "5:10"
-    },
-    {
-        title: "Sunset over Colombo (Electro-Violin)",
-        category: "fusion",
+        title: "⁠Collaborations with artists - Hiru",
+        category: "highlights",
         type: "video",
-        image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=800&auto=format&fit=crop",
-        duration: "4:55"
-    }
+        image: "/performances/19.jpeg",
+        video:"",
+    },
+    {
+        title: "⁠Ala Hendewa Live in Concert - Thulhiriya",
+        category: "events",
+        type: "video",
+        image: "/performances/18.jpeg",
+        video:"",
+    },
+    {
+        title: "Neth FM Live Performance - Mandaram Ra",
+        category: "highlights",
+        type: "video",
+        image: "",
+        video:"",
+    },
+    {
+        title: "⁠Melody Composing - Ma Soyana",
+        category: "promotions",
+        type: "video",
+        image: "",
+        video:"",
+    },
+    {
+        title: "⁠Mandodari Live in Concert - University of Sri Jayewardenepura",
+        category: "events",
+        type: "video",
+        image: "/performances/15.jpeg",
+        video:"",
+    },
+    {
+        title: "⁠Corporate Event - WNS Global Services",
+        category: "events",
+        type: "video",
+        image: "",
+        video:"",
+    },
+    {
+        title: "⁠Participation to Asia Violin Summit",
+        category: "promotions",
+        type: "video",
+        image: "",
+        video:"",
+    },
+    {
+        title: "⁠Paid Promotion with AKHTARJ",
+        category: "promotions",
+        type: "video",
+        image: "",
+        video:"",
+    },
+    {
+        title: "Violin Parts Playing - with Ayodhya video",
+        category: "promotions",
+        type: "video",
+        image: "",
+        video:"",
+    },
+    {
+        title: "Big Match Conference Performance - Maliyadeva vs St Annes College Kurunegala",
+        category: "events",
+        type: "video",
+        image: "/performances/10.jpeg",
+        video:"",
+    },
+    {
+        title: "Youth Peak Magazine Article",
+        category: "highlights",
+        type: "video",
+        image: "/performances/9.jpeg",
+        video:"",
+    },
+    {
+        title: "Paid Partnership with Panthera Styles",
+        category: "promotions",
+        type: "video",
+        image: "",
+        video:"",
+    },
+    {
+        title: "Bizenglish Ada Derana magazine ",
+        category: "highlights",
+        type: "video",
+        image: "/performances/7.jpeg",
+        video:"",
+    },
+    {
+        title: "Charana TV performance",
+        category: "highlights",
+        type: "video",
+        image: "",
+        video:"",
+    },
+    {
+        title: "AnD School Modeling Participation",
+        category: "highlights",
+        type: "video",
+        image: "/performances/5.jpeg",
+        video:"",
+    },
+    {
+        title: "⁠Paid Promotion with The Garden Fusion Cafe",
+        category: "promotions",
+        type: "video",
+        image: "/performances/4.jpeg",
+        video:"",
+    },
+    {
+        title: "⁠Atharaman Wela with Sanka Dineth - Organized by the Barista SL",
+        category: "events",
+        type: "video",
+        image: "/performances/3.jpeg",
+        video:"",
+    },
+    {
+        title: "⁠Valentine Programme - Hidramani Product Development Center",
+        category: "events",
+        type: "video",
+        image: "/performances/2.jpeg",
+        video:"",
+    },
+    {
+        title: "Graduation Ceremony - Imperial College of Business Studies",
+        category: "events",
+        type: "video",
+        image: "/performances/1.jpeg",
+        video:"https://vt.tiktok.com/ZSQpQWauM/",
+    },
 ];
 
 export default function MusicPage() {
@@ -117,11 +222,11 @@ export default function MusicPage() {
                                     className="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
                                     style={{ backgroundImage: `url(${work.image})` }}
                                 />
-                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all">
+                                {/* <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all">
                                     <button className="w-12 h-12 bg-gold-primary text-background rounded-full flex items-center justify-center transform scale-75 group-hover:scale-100 transition-all">
                                         <Play size={20} fill="currentColor" />
                                     </button>
-                                </div>
+                                </div> */}
                                 <div className="absolute top-4 right-4 z-10">
                                     {work.type === 'video' ? (
                                         <div className="p-2 glass rounded-lg text-gold-primary"><Film size={16} /></div>
@@ -136,13 +241,13 @@ export default function MusicPage() {
                                     <span className="text-gold-primary text-[10px] uppercase tracking-[0.2em] font-bold">
                                         {work.category.replace('-', ' ')}
                                     </span>
-                                    <span className="text-foreground/40 text-[10px] font-mono">{work.duration}</span>
+                                    {/* <span className="text-foreground/40 text-[10px] font-mono">{work.duration}</span> */}
                                 </div>
                                 <h3 className="text-xl font-bold group-hover:text-gold-primary transition-colors line-clamp-1">
                                     {work.title}
                                 </h3>
 
-                                <div className="mt-6 pt-6 border-t border-white/5 flex justify-between items-center">
+                                {/* <div className="mt-6 pt-6 border-t border-white/5 flex justify-between items-center">
                                     <button className="text-xs font-bold tracking-widest text-foreground/40 uppercase hover:text-gold-primary transition-colors">
                                         Save to Playlist
                                     </button>
@@ -150,14 +255,14 @@ export default function MusicPage() {
                                         <span>Play Now</span>
                                         <ArrowRight size={14} />
                                     </button>
-                                </div>
+                                </div> */}
                             </div>
                         </motion.div>
                     ))}
                 </div>
 
                 {/* Sri Lankan Music Focus Section (Additional Detail) */}
-                <section className="mt-32 p-12 glass rounded-3xl border-gold-primary/10 flex flex-col lg:flex-row items-center gap-16">
+                {/* <section className="mt-32 p-12 glass rounded-3xl border-gold-primary/10 flex flex-col lg:flex-row items-center gap-16">
                     <div className="flex-1 space-y-8">
                         <div className="inline-flex items-center space-x-2 px-3 py-1 bg-gold-primary/10 text-gold-secondary text-[10px] font-bold tracking-[0.2em] uppercase rounded">
                             <Globe size={12} />
@@ -188,7 +293,7 @@ export default function MusicPage() {
                             <Music size={120} className="text-gold-primary/20" />
                         </div>
                     </div>
-                </section>
+                </section> */}
             </div>
         </div>
     );

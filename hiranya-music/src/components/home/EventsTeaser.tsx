@@ -5,29 +5,7 @@ import { motion } from 'framer-motion';
 import { Calendar, MapPin, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
-const upcomingEvents = [
-    {
-        date: "MAR 15",
-        title: "Classical Strings Evening",
-        venue: "Lionel Wendt Art Centre",
-        location: "Colombo, Sri Lanka",
-        type: "Concert"
-    },
-    {
-        date: "APR 02",
-        title: "Fusion Night: Violin & Tabla",
-        venue: "Galle Face Hotel",
-        location: "Colombo, Sri Lanka",
-        type: "Performance"
-    },
-    {
-        date: "MAY 20",
-        title: "Symphony of the Indian Ocean",
-        venue: "BMICH Main Hall",
-        location: "Colombo, Sri Lanka",
-        type: "Soloist Appearance"
-    }
-];
+import { EVENTS_TEASER } from '@/constants/home';
 
 export default function EventsTeaser() {
     return (
@@ -35,20 +13,20 @@ export default function EventsTeaser() {
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 space-y-4 md:space-y-0">
                     <div>
-                        <span className="text-gold-primary uppercase tracking-[0.3em] font-bold text-sm mb-4 block">Performances</span>
-                        <h2 className="text-4xl md:text-5xl font-serif font-bold">Upcoming Engagements</h2>
+                        <span className="text-gold-primary uppercase tracking-[0.3em] font-bold text-sm mb-4 block">{EVENTS_TEASER.tagline}</span>
+                        <h2 className="text-4xl md:text-5xl font-serif font-bold">{EVENTS_TEASER.title}</h2>
                     </div>
                     <Link
                         href="/events"
                         className="text-gold-primary hover:text-gold-secondary transition-colors font-bold tracking-widest text-xs flex items-center space-x-2"
                     >
-                        <span>VIEW ALL EVENTS</span>
+                        <span>{EVENTS_TEASER.viewAll}</span>
                         <ArrowRight size={16} />
                     </Link>
                 </div>
 
                 <div className="space-y-4">
-                    {upcomingEvents.map((event, i) => (
+                    {EVENTS_TEASER.upcomingEvents.map((event, i) => (
                         <motion.div
                             key={i}
                             initial={{ opacity: 0, x: -20 }}
@@ -86,7 +64,7 @@ export default function EventsTeaser() {
                                     href="/booking"
                                     className="bg-transparent border border-gold-primary/30 hover:bg-gold-primary hover:text-background text-gold-primary px-6 py-2 rounded-full text-xs font-bold transition-all"
                                 >
-                                    TICKETS
+                                    {EVENTS_TEASER.tickets}
                                 </Link>
                             </div>
                         </motion.div>

@@ -1,0 +1,16 @@
+export const VARIABLES = {
+  artistName: "Hiranya",
+  artistNameLower: "hiranya",
+  instrument: "violin",
+  instrumentTitle: "Violinist",
+  country: "Sri Lanka",
+  countryAdjective: "Sri Lankan",
+  email: "hiranyaneththasinghe@gmail.com",
+  phone: "+94 77 123 4567",
+  phoneRaw: "94771234567",
+  phoneRawBooking: "94724392750",
+  instagram: "Hiranya_Thathsarani",
+  instagramUrl: "https://instagram.com/hiranya_violin",
+  youtubeUrl: "https://youtube.com",
+  facebookUrl: "https://facebook.com",
+};

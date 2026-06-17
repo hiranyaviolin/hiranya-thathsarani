@@ -3,49 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Ticket, Camera } from 'lucide-react';
-
-const events = {
-    upcoming: [
-        {
-            date: "MAR 15, 2024",
-            time: "7:00 PM",
-            title: "Classical Strings Evening",
-            venue: "Lionel Wendt Art Centre",
-            location: "Colombo, Sri Lanka",
-            type: "Concert",
-            price: "LKR 3,500 upwards"
-        },
-        {
-            date: "APR 02, 2024",
-            time: "6:30 PM",
-            title: "Fusion Night: Violin & Tabla",
-            venue: "Galle Face Hotel",
-            location: "Colombo, Sri Lanka",
-            type: "Performance",
-            price: "RSVP Required"
-        }
-    ],
-    past: [
-        {
-            title: "Symphony of the Indian Ocean",
-            venue: "BMICH Main Hall",
-            date: "DEC 2023",
-            image: "https://images.unsplash.com/photo-1514481909227-e54abc4da6ad?q=80&w=800&auto=format&fit=crop"
-        },
-        {
-            title: "Kandy Festival Recital",
-            venue: "Queen's Hotel",
-            date: "AUG 2023",
-            image: "https://images.unsplash.com/photo-1507838596018-bd7c368cba73?q=80&w=800&auto=format&fit=crop"
-        },
-        {
-            title: "Colombo Jazz Fusion",
-            venue: "Barefoot Garden Cafe",
-            date: "JUN 2023",
-            image: "https://images.unsplash.com/photo-1541626395124-219ec94723c1?q=80&w=800&auto=format&fit=crop"
-        }
-    ]
-};
+import { EVENTS_HERO, UPCOMING_EVENTS, PAST_EVENTS } from '@/constants/events';
 
 export default function EventsPage() {
     return (
@@ -57,14 +15,14 @@ export default function EventsPage() {
                         animate={{ opacity: 1 }}
                         className="text-gold-primary uppercase tracking-[0.4em] font-bold text-xs mb-4 block"
                     >
-                        Live
+                        {EVENTS_HERO.tagline}
                     </motion.span>
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         className="text-5xl md:text-7xl font-serif font-bold mb-6"
                     >
-                        Events & <span className="gold-gradient">Concerts</span>
+                        {EVENTS_HERO.titlePart1}<span className="gold-gradient">{EVENTS_HERO.titlePart2}</span>
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -72,8 +30,7 @@ export default function EventsPage() {
                         transition={{ delay: 0.1 }}
                         className="text-foreground/60 max-w-2xl mx-auto font-light"
                     >
-                        Experience the magic of live performance. From grand concert halls to
-                        intimate garden settings.
+                        {EVENTS_HERO.description}
                     </motion.p>
                 </header>
 
@@ -81,10 +38,10 @@ export default function EventsPage() {
                 <section className="mb-32">
                     <h2 className="text-3xl font-serif font-bold mb-12 flex items-center space-x-4">
                         <Calendar className="text-gold-primary" />
-                        <span>Upcoming Engagements</span>
+                        <span>{UPCOMING_EVENTS.title}</span>
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {events.upcoming.map((event, i) => (
+                        {UPCOMING_EVENTS.list.map((event, i) => (
                             <motion.div
                                 key={i}
                                 initial={{ opacity: 0, scale: 0.95 }}
@@ -119,7 +76,7 @@ export default function EventsPage() {
                                     href="/booking"
                                     className="inline-flex items-center justify-center w-full bg-gold-primary text-background font-bold py-4 rounded-xl hover:bg-gold-secondary transition-all"
                                 >
-                                    GET TICKETS
+                                    {UPCOMING_EVENTS.getTickets}
                                 </a>
                             </motion.div>
                         ))}
@@ -130,10 +87,10 @@ export default function EventsPage() {
                 <section>
                     <h2 className="text-3xl font-serif font-bold mb-12 flex items-center space-x-4">
                         <Camera className="text-gold-primary" />
-                        <span>Past Performances</span>
+                        <span>{PAST_EVENTS.title}</span>
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {events.past.map((perf, i) => (
+                        {PAST_EVENTS.list.map((perf, i) => (
                             <motion.div
                                 key={i}
                                 initial={{ opacity: 0, y: 20 }}

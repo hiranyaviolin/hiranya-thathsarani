@@ -5,24 +5,18 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Award, BookOpen, Music } from 'lucide-react';
 
+import { ABOUT_TEASER } from '@/constants/home';
+
 export default function AboutTeaser() {
-    const highlights = [
-        {
-            icon: <Award className="text-gold-primary" />,
-            title: "Classical Mastery",
-            description: "Advanced training in Western Classical violin with a focus on emotive performance."
-        },
-        {
-            icon: <Music className="text-gold-primary" />,
-            title: "Cultural Fusion",
-            description: "Pioneering work in adapting Sri Lankan folk and cinematic music for the violin."
-        },
-        {
-            icon: <BookOpen className="text-gold-primary" />,
-            title: "Teaching Legacy",
-            description: "Dedicated to nurturing the next generation of violinists in Sri Lanka."
-        }
+    const icons = [
+        <Award className="text-gold-primary" key="award" />,
+        <Music className="text-gold-primary" key="music" />,
+        <BookOpen className="text-gold-primary" key="book" />
     ];
+    const highlights = ABOUT_TEASER.highlights.map((h, i) => ({
+        ...h,
+        icon: icons[i]
+    }));
 
     return (
         <section className="py-24 px-6 bg-card">
@@ -38,7 +32,7 @@ export default function AboutTeaser() {
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
                     <div className="absolute bottom-8 left-8 right-8 p-6 glass rounded-xl border-gold-primary/5">
                         <p className="text-gold-primary font-serif italic text-lg whitespace-pre-line">
-                            "Music is the bridge between the heart and the heritage."
+                            {ABOUT_TEASER.quote}
                         </p>
                     </div>
                 </motion.div>
@@ -49,14 +43,12 @@ export default function AboutTeaser() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
-                    <span className="text-gold-primary uppercase tracking-[0.3em] font-bold text-sm mb-4 block">The Artist</span>
+                    <span className="text-gold-primary uppercase tracking-[0.3em] font-bold text-sm mb-4 block">{ABOUT_TEASER.tagline}</span>
                     <h2 className="text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight">
-                        Harmonizing Traditions, <br /> Inspiring Souls
+                        {ABOUT_TEASER.titlePart1} <br /> {ABOUT_TEASER.titlePart2}
                     </h2>
                     <p className="text-foreground/70 mb-10 leading-relaxed text-lg font-light">
-                        Born and raised in the vibrant musical landscape of Sri Lanka, Hiranya has dedicated her life to the violin.
-                        Her journey began with rigorous Western Classical training, but her soul found its truest expression in the
-                        melodies of her home.
+                        {ABOUT_TEASER.description}
                     </p>
 
                     <div className="space-y-6 mb-12">
@@ -75,7 +67,7 @@ export default function AboutTeaser() {
                         href="/about"
                         className="inline-block border border-gold-primary/30 text-gold-primary px-10 py-4 rounded-full font-bold text-xs tracking-widest hover:bg-gold-primary hover:text-background transition-all"
                     >
-                        DISCOVER THE JOURNEY
+                        {ABOUT_TEASER.button}
                     </Link>
                 </motion.div>
             </div>

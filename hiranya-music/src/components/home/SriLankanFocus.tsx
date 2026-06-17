@@ -5,41 +5,27 @@ import { motion } from 'framer-motion';
 import { Play, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
-const localTracks = [
-    {
-        title: "Gajaga Vannama (Violin Solo)",
-        category: "Folk Adaptation",
-        duration: "4:20",
-        image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop"
-    },
-    {
-        title: "Vikasitha Pem (Violin Fusion)",
-        category: "Film Music",
-        duration: "5:15",
-        image: "https://images.unsplash.com/photo-1507838596018-bd7c368cba73?q=80&w=800&auto=format&fit=crop"
-    }
-];
+import { SRI_LANKAN_FOCUS } from '@/constants/home';
 
 export default function SriLankanFocus() {
     return (
         <section className="py-24 px-6 relative overflow-hidden">
             {/* Decorative Text background */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15rem] font-serif font-extrabold text-gold-primary/5 select-none pointer-events-none whitespace-nowrap hidden lg:block">
-                SRI LANKA
+                {SRI_LANKAN_FOCUS.bgText}
             </div>
 
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <span className="text-gold-primary uppercase tracking-[0.3em] font-bold text-sm mb-4 block">Sri Lankan Resonance</span>
-                    <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">A Focus on Local Roots</h2>
+                    <span className="text-gold-primary uppercase tracking-[0.3em] font-bold text-sm mb-4 block">{SRI_LANKAN_FOCUS.tagline}</span>
+                    <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">{SRI_LANKAN_FOCUS.title}</h2>
                     <p className="text-foreground/60 max-w-2xl mx-auto font-light">
-                        Highlighting violin adaptations of folk songs, traditional vannams, and contemporary Sri Lankan film music.
-                        Experience the fusion of global sound and local soul.
+                        {SRI_LANKAN_FOCUS.description}
                     </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {localTracks.map((track, i) => (
+                    {SRI_LANKAN_FOCUS.tracks.map((track, i) => (
                         <motion.div
                             key={i}
                             initial={{ opacity: 0, y: 30 }}
@@ -75,7 +61,7 @@ export default function SriLankanFocus() {
                         href="/music#sri-lankan"
                         className="inline-flex items-center space-x-2 text-gold-primary font-bold hover:space-x-4 transition-all"
                     >
-                        <span>EXPLORE SRI LANKAN FUSION</span>
+                        <span>{SRI_LANKAN_FOCUS.exploreLink}</span>
                         <ArrowRight size={20} />
                     </Link>
                 </div>
