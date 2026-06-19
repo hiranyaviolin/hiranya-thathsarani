@@ -4,6 +4,7 @@ import SriLankanFocus from "@/components/home/SriLankanFocus";
 import EventsTeaser from "@/components/home/EventsTeaser";
 import { CTA } from "@/constants/home";
 import { VARIABLES } from "@/constants/variables";
+import AboutSection from "@/components/home/AboutSection";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
   
 </div>
 
+      <AboutSection />
       {/* Call to action section */}
       <section className="py-24 px-6 bg-gold-primary overflow-hidden relative">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">

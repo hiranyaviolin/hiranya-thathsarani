@@ -6,7 +6,7 @@ export const NAVBAR = {
   bookNow: "CONTACT",
   links: [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
+    // { name: 'About', href: '/about' },
     { name: 'Performances', href: '/music' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Lessons', href: '/lessons' },

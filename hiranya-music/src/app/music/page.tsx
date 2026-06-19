@@ -24,7 +24,7 @@ const musicWorks = [
         title: "Collaboration with Shanuka Ekanayake",
         category: "promos & collabs",
         type: "video",
-        image: "",
+        image: "/performances/20.jpeg",
         video:"",
     },
     {
@@ -45,14 +45,14 @@ const musicWorks = [
         title: "Neth FM Live Performance - Mandaram Ra",
         category: "highlights",
         type: "video",
-        image: "",
+        image: "/performances/17.jpeg",
         video:"",
     },
     {
         title: "⁠Melody Composing - Ma Soyana",
         category: "promos & collabs",
         type: "video",
-        image: "",
+        image: "/performances/16.jpeg",
         video:"",
     },
     {
@@ -66,28 +66,28 @@ const musicWorks = [
         title: "⁠Corporate Event - WNS Global Services",
         category: "events",
         type: "video",
-        image: "",
+        image: "/performances/14.jpeg",
         video:"",
     },
     {
         title: "⁠Participation to Asia Violin Summit",
         category: "promos & collabs",
         type: "video",
-        image: "",
+        image: "/performances/13.jpeg",
         video:"",
     },
     {
         title: "Collaboration with AKHTARJ",
         category: "promos & collabs",
         type: "video",
-        image: "",
+        image: "/performances/12.jpeg",
         video:"",
     },
     {
         title: "Violin Parts Playing - with Ayodhya video",
         category: "promos & collabs",
         type: "video",
-        image: "",
+        image: "/performances/11.jpeg",
         video:"",
     },
     {
@@ -108,7 +108,7 @@ const musicWorks = [
         title: "Panthera Styles - Clothing Store",
         category: "promos & collabs",
         type: "video",
-        image: "",
+        image: "/performances/8.jpeg",
         video:"",
     },
     {
@@ -122,7 +122,7 @@ const musicWorks = [
         title: "Charana TV Performance",
         category: "highlights",
         type: "video",
-        image: "",
+        image: "/performances/6.jpeg",
         video:"",
     },
     {
@@ -159,6 +159,34 @@ const musicWorks = [
         type: "video",
         image: "/performances/1.jpeg",
         video:"https://vt.tiktok.com/ZSQpQWauM/",
+    },
+    {
+        title: "Be Famous",
+        category: "highlights",
+        type: "video",
+        image: "/performances/23.jpeg",
+        video:"",
+    },
+    {
+        title: "Dhaara - Live in Concert",
+        category: "events",
+        type: "video",
+        image: "/performances/22.jpeg",
+        video:"",
+    },
+    {
+        title: "Chatters Junction - Podcast",
+        category: "highlights",
+        type: "video",
+        image: "/performances/24.jpeg",
+        video:"",
+    },
+    {
+        title: "Ahankara Handawa - Swarnavahini",
+        category: "highlights",
+        type: "video",
+        image: "/performances/25.jpeg",
+        video:"",
     },
 ];
 
@@ -219,7 +247,8 @@ export default function MusicPage() {
                         >
                             <div className="aspect-video relative overflow-hidden">
                                 <div
-                                    className="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
+                                    // className="absolute inset-0 bg-cover bg-center 3xl:grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
+                                    className="absolute inset-0 bg-cover bg-center transition-all duration-700 group-hover:scale-110"
                                     style={{ backgroundImage: `url(${work.image})` }}
                                 />
                                 {/* <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all">

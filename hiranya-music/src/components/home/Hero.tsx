@@ -59,7 +59,7 @@ export default function Hero() {
             </div>
 
             {/* Scroll Indicator */}
-            <motion.div
+            {/* <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5, duration: 1 }}
@@ -67,7 +67,7 @@ export default function Hero() {
             >
                 <span className="text-[10px] uppercase tracking-[0.3em] text-foreground/30">{HERO.scroll}</span>
                 <div className="w-[1px] h-12 bg-gradient-to-b from-gold-primary/50 to-transparent" />
-            </motion.div>
+            </motion.div> */}
         </section>
     );
 }
