@@ -8,8 +8,8 @@ export const NAVBAR = {
     { name: 'Home', href: '/' },
     // { name: 'About', href: '/about' },
     { name: 'Performances', href: '/music' },
-    { name: 'Gallery', href: '/gallery' },
-    { name: 'Lessons', href: '/lessons' },
+    // { name: 'Gallery', href: '/gallery' },
+    // { name: 'Lessons', href: '/lessons' },
     // { name: 'Contact', href: '/booking' },
   ],
 };
@@ -17,8 +17,10 @@ export const NAVBAR = {
 export const FOOTER = {
   brand: VARIABLES.artistName.toUpperCase(),
   brandDescription: `Blending Western Classical elegance with the rich musical heritage of ${VARIABLES.country}. Bringing the soul of the ${VARIABLES.instrument} to every stage.`,
+  // navTitle: "Navigation",
+  // navItems: ['Home', 'About', 'Music', 'Events', 'Lessons'],
   navTitle: "Navigation",
-  navItems: ['Home', 'About', 'Music', 'Events', 'Lessons'],
+  navItems: ['Home', 'Events'],
   contactTitle: "Contact",
   bookEventsLink: "Book for Events →",
   newsletterTitle: "Newsletter",

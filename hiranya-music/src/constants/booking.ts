@@ -15,6 +15,14 @@ export const CONTACT_INFO = {
   phoneValue: VARIABLES.phone,
   instagramLabel: "Instagram",
   instagramValue: VARIABLES.instagram,
+  facebookLabel: "Facebook",
+  facebookValue: "Hiranya Thathsarani",
+  youtubeLabel: "YouTube",
+  youtubeValue: "@hiranya_violin",
+  spotifyLabel: "Spotify",
+  spotifyValue: "Hiranya Violin",
+  tiktokLabel: "TikTok",
+  tiktokValue: "@hiranya_violin",
 };
 
 export const INSTANT_INQUIRY = {

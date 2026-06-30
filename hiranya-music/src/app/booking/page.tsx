@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Phone, Mail, Instagram, MessageCircle } from 'lucide-react';
+import { Send, Phone, Mail, Instagram, MessageCircle, Youtube, Facebook } from 'lucide-react';
 import { BOOKING_HERO, CONTACT_INFO, INSTANT_INQUIRY, BOOKING_FORM } from '@/constants/booking';
 import { VARIABLES } from '@/constants/variables';
 
@@ -90,6 +90,46 @@ export default function BookingPage() {
                                     <div>
                                         <p className="text-xs text-foreground/40 uppercase tracking-widest font-bold">{CONTACT_INFO.instagramLabel}</p>
                                         <p className="text-lg font-medium group-hover:text-gold-primary transition-colors">{CONTACT_INFO.instagramValue}</p>
+                                    </div>
+                                </a>
+
+                                <a href={VARIABLES.facebookUrl} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 group">
+                                    <div className="w-12 h-12 rounded-full glass border border-gold-primary/20 flex items-center justify-center text-gold-primary group-hover:bg-gold-primary group-hover:text-background transition-all">
+                                        <Facebook size={20} />
+                                    </div>
+                                    <div>
+                                        <p className="text-xs text-foreground/40 uppercase tracking-widest font-bold">{CONTACT_INFO.facebookLabel}</p>
+                                        <p className="text-lg font-medium group-hover:text-gold-primary transition-colors">{CONTACT_INFO.facebookValue}</p>
+                                    </div>
+                                </a>
+
+                                <a href={VARIABLES.youtubeUrl} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 group">
+                                    <div className="w-12 h-12 rounded-full glass border border-gold-primary/20 flex items-center justify-center text-gold-primary group-hover:bg-gold-primary group-hover:text-background transition-all">
+                                        <Youtube size={20} />
+                                    </div>
+                                    <div>
+                                        <p className="text-xs text-foreground/40 uppercase tracking-widest font-bold">{CONTACT_INFO.youtubeLabel}</p>
+                                        <p className="text-lg font-medium group-hover:text-gold-primary transition-colors">{CONTACT_INFO.youtubeValue}</p>
+                                    </div>
+                                </a>
+
+                                <a href={VARIABLES.spotifyUrl} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 group">
+                                    <div className="w-12 h-12 rounded-full glass border border-gold-primary/20 flex items-center justify-center text-gold-primary group-hover:bg-gold-primary group-hover:text-background transition-all">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                                    </div>
+                                    <div>
+                                        <p className="text-xs text-foreground/40 uppercase tracking-widest font-bold">{CONTACT_INFO.spotifyLabel}</p>
+                                        <p className="text-lg font-medium group-hover:text-gold-primary transition-colors">{CONTACT_INFO.spotifyValue}</p>
+                                    </div>
+                                </a>
+
+                                <a href={VARIABLES.tiktokUrl} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 group">
+                                    <div className="w-12 h-12 rounded-full glass border border-gold-primary/20 flex items-center justify-center text-gold-primary group-hover:bg-gold-primary group-hover:text-background transition-all">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+                                    </div>
+                                    <div>
+                                        <p className="text-xs text-foreground/40 uppercase tracking-widest font-bold">{CONTACT_INFO.tiktokLabel}</p>
+                                        <p className="text-lg font-medium group-hover:text-gold-primary transition-colors">{CONTACT_INFO.tiktokValue}</p>
                                     </div>
                                 </a>
                             </div>
