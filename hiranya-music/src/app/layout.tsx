@@ -15,10 +15,15 @@ const playfair = Playfair_Display({
 });
 
 import { METADATA } from "@/constants/metadata";
+import { VARIABLES } from "@/constants/variables";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(VARIABLES.domain),
   title: METADATA.title,
   description: METADATA.description,
+  keywords: METADATA.keywords,
+  openGraph: METADATA.openGraph,
+  twitter: METADATA.twitter,
 };
 
 export default function RootLayout({

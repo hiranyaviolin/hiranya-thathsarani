@@ -15,4 +15,6 @@ export const VARIABLES = {
   facebookUrl: "https://www.facebook.com/share/1GZBDedGmA/?mibextid=wwXIfr",
   spotifyUrl: "https://www.youtube.com/redirect?event=channel_description&redir_token=QUFFLUhqazlhX3lIYnczYVBoQ01qVlpTemhJa0lvM1pBUXxBQ3Jtc0trZGJzeWl6bHNiM2prVENZTVNIQUdORjByQmt5V29tTmZNcHVfcjFzWFhOVlh0emxNMGJadlh6amdtQ2NMT1pfUW5GVm9FaHNaSXpqZ1BsX3d4RUNqTmNBMkNhUThIcmFqQTlkS1FEN25nQTJvWk1LYw&q=https%3A%2F%2Fopen.spotify.com%2Fartist%2F1bd4EBgcqo1XXFNccOxdFl%3Fsi%3DP2W2qXy0So6uRM6oWUtJKA",
   tiktokUrl: "https://www.tiktok.com/@hiranya_thathsarani",
+  domain: "https://hiranyathathsarani.com", // TODO: Update with actual domain
+  baseKeywords: ["Hiranya Thathsarani", "Violinist Sri Lanka", "Sri Lankan Violinist", "Classical Violinist", "Event Musician", "Wedding Violinist", "Live Music Sri Lanka"],
 };

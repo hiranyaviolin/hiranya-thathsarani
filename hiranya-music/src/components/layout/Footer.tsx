@@ -37,13 +37,19 @@ export default function Footer() {
                     <div>
                         <h4 className="text-gold-primary font-serif font-bold mb-6 uppercase tracking-wider text-sm">{FOOTER.navTitle}</h4>
                         <ul className="space-y-4">
-                            {FOOTER.navItems.map((item) => (
+                            {FOOTER.navItems.map((item) => {
+                                let href = `/${item.toLowerCase()}`;
+                                if (item.toLowerCase() === 'home') href = '/';
+                                if (item.toLowerCase() === 'contact') href = '/booking';
+                                
+                                return (
                                 <li key={item}>
-                                    <Link href={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`} className="text-foreground/60 hover:text-gold-primary transition-colors text-sm">
+                                    <Link href={href} className="text-foreground/60 hover:text-gold-primary transition-colors text-sm">
                                         {item}
                                     </Link>
                                 </li>
-                            ))}
+                                );
+                            })}
                         </ul>
                     </div>
 
