@@ -1,12 +1,44 @@
-import React from 'react';
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { Music, Instagram, Youtube, Facebook, Mail, Phone } from 'lucide-react';
 import { VARIABLES } from "@/constants/variables";
 import { FOOTER } from "@/constants/layout";
 
 export default function Footer() {
+    const [animDuration, setAnimDuration] = useState(15); // Default to 15s
+
+    useEffect(() => {
+        // Determine the appropriate duration based on screen size (faster on mobile)
+        const updateDuration = () => {
+            const isMobile = window.innerWidth < 768;
+            setAnimDuration(isMobile ? 8 : 15);
+        };
+        
+        updateDuration(); // Set initially
+        window.addEventListener('resize', updateDuration);
+        return () => window.removeEventListener('resize', updateDuration);
+    }, []);
+
     return (
-        <footer className="bg-card border-t border-gold-primary/10 pt-16 pb-8 px-6">
+        <footer className="bg-card border-t border-gold-primary/10 pt-16 pb-8 px-6 relative">
+            {/* Animated Character Container */}
+            <div className="absolute -top-[80px] left-0 w-full h-[80px] pointer-events-none z-20 overflow-hidden">
+                <motion.div
+                    animate={{ x: ["-100%", "100vw"] }}
+                    transition={{ 
+                        duration: animDuration, 
+                        repeat: Infinity, 
+                        ease: "linear" 
+                    }}
+                    className="absolute top-0 left-0 h-full w-auto flex items-end"
+                >
+                    <img src="/video.gif" alt="Walking Character" className="h-[80px] w-auto object-contain" />
+                </motion.div>
+            </div>
+
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                     {/* Brand */}
