@@ -39,7 +39,7 @@ export default function CTASection() {
                         whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(5,5,5,0.3)" }}
                         whileTap={{ scale: 0.95 }}
                         href="/booking"
-                        className="bg-background text-gold-primary px-10 py-4 rounded-full font-bold tracking-widest transition-colors"
+                        className="bg-background text-gold-primary w-full sm:w-auto text-center px-10 py-4 rounded-full font-bold tracking-widest transition-colors"
                     >
                         {CTA.enquireButton}
                     </motion.a>
@@ -49,7 +49,7 @@ export default function CTASection() {
                         href={`https://wa.me/${VARIABLES.phoneRaw}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-transparent border-2 border-background text-background px-10 py-4 rounded-full font-bold tracking-widest transition-colors"
+                        className="bg-transparent border-2 border-background w-full sm:w-auto text-center text-background px-10 py-4 rounded-full font-bold tracking-widest transition-colors"
                     >
                         {CTA.whatsappButton}
                     </motion.a>

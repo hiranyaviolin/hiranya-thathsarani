@@ -103,7 +103,7 @@ export default function Hero() {
                     >
                         <Link
                             href="/booking"
-                            className="group relative bg-gold-primary text-background px-8 py-4 rounded-full font-bold text-sm tracking-widest overflow-hidden transition-all hover:pr-12 hover:scale-105 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+                            className="group relative bg-gold-primary text-background w-full sm:w-auto px-8 py-4 rounded-full font-bold text-sm tracking-widest overflow-hidden transition-all hover:pr-12 hover:scale-105 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] text-center"
                         >
                             <span className="relative z-10">{HERO.bookButton}</span>
                             <ChevronRight className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all" size={20} />
@@ -111,7 +111,7 @@ export default function Hero() {
 
                         <Link
                             href="/music"
-                            className="flex items-center space-x-3 text-gold-primary hover:text-gold-secondary transition-colors font-bold tracking-widest text-sm hover:scale-105"
+                            className="flex items-center justify-center w-full sm:w-auto space-x-3 text-gold-primary hover:text-gold-secondary transition-colors font-bold tracking-widest text-sm hover:scale-105"
                         >
                             <div className="w-12 h-12 rounded-full border border-gold-primary/30 flex items-center justify-center group-hover:bg-gold-primary/20 transition-all shadow-[0_0_0_rgba(212,175,55,0)] group-hover:shadow-[0_0_15px_rgba(212,175,55,0.3)]">
                                 <Play size={16} fill="currentColor" />
@@ -127,7 +127,7 @@ export default function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5, duration: 1 }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2 cursor-pointer"
+                className="hidden absolute bottom-10 left-1/2 -translate-x-1/2 md:flex flex-col items-center space-y-2 cursor-pointer"
                 onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
             >
                 <span className="text-[10px] uppercase tracking-[0.3em] text-foreground/30">{HERO.scroll}</span>
