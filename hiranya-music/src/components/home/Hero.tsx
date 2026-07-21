@@ -59,13 +59,16 @@ export default function Hero() {
                 />
             </div>
 
-            {/* Cinematic Background Image */}
-            <motion.div 
-                initial={{ scale: 1 }}
-                animate={{ scale: 1.05 }}
-                transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
-                className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1465804575741-338b8555e02f?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-30 grayscale mix-blend-overlay" 
-            />
+            {/* Cinematic Background Video */}
+            <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale"
+            >
+                <source src="/bgvideo.mp4" type="video/mp4" />
+            </video>
             <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background" />
 
             <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
