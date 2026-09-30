@@ -46,3 +46,50 @@ h1, h2, h3, h4, .font-serif {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.tivra {
+  position: relative;
+  margin-right: 4px; /* Add slight margin to make room for the mark */
+}
+.tivra::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: -6px;
+  width: 6px;
+  height: 2px;
+  background: currentColor;
+  transform: rotate(-45deg);
+}
+
+.komal {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.upper {
+  position: relative;
+}
+.upper::before {
+  content: "•";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+}
+
+.bind {
+  position: relative;
+  display: inline-block;
+}
+.bind::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  border-bottom: 1.5px solid currentColor;
+  border-radius: 50%;
+}
