@@ -13,6 +13,8 @@ export default function NotationSyncPlayer({ notation }: NotationSyncPlayerProps
     const [currentTime, setCurrentTime] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
     const playerRef = useRef<any>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const activeLineRef = useRef<HTMLDivElement>(null);
 
     // Poll the player for current time every 100ms when playing
     useEffect(() => {
@@ -25,6 +27,27 @@ export default function NotationSyncPlayer({ notation }: NotationSyncPlayerProps
         }
         return () => clearInterval(interval);
     }, [isPlaying]);
+
+    const activeIndex = notation.notationLines.findIndex(
+        (line) => currentTime >= line.startTime && currentTime < line.endTime
+    );
+
+    // Auto-scroll when the active index changes
+    useEffect(() => {
+        if (activeLineRef.current && containerRef.current && isPlaying) {
+            const container = containerRef.current;
+            const activeEl = activeLineRef.current;
+
+            const containerHalfHeight = container.clientHeight / 2;
+            const elTop = activeEl.offsetTop; // offsetTop is relative to the offsetParent (which is the container)
+            const elHalfHeight = activeEl.clientHeight / 2;
+
+            container.scrollTo({
+                top: elTop - containerHalfHeight + elHalfHeight,
+                behavior: 'smooth'
+            });
+        }
+    }, [activeIndex, isPlaying]);
 
     const onPlayerReady: YouTubeProps['onReady'] = (event) => {
         playerRef.current = event.target;
@@ -75,20 +98,23 @@ export default function NotationSyncPlayer({ notation }: NotationSyncPlayerProps
                     <FileText size={24} />
                     <h2 className="text-2xl font-serif font-bold">Interactive Notations</h2>
                 </div>
-                
-                <div className="bg-background/40 rounded-xl p-4 md:p-6 border border-white/5 font-mono text-sm md:text-base leading-relaxed text-foreground/80 lg:max-h-[70vh] overflow-y-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+
+                <div
+                    ref={containerRef}
+                    className="relative bg-background/40 rounded-xl p-6 md:p-8 border border-white/5 font-mono text-sm md:text-base leading-relaxed text-foreground/80 lg:max-h-[50vh] overflow-y-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                >
                     {notation.notationLines.map((line, index) => {
-                        const isActive = currentTime >= line.startTime && currentTime < line.endTime;
-                        
+                        const isActive = index === activeIndex;
+
                         return (
-                            <div 
-                                key={index} 
+                            <div
+                                key={index}
+                                ref={isActive ? activeLineRef : null}
                                 onClick={() => handleLineClick(line.startTime)}
-                                className={`whitespace-pre-wrap py-2 px-2 md:px-4 rounded-lg cursor-pointer transition-all duration-300 border-l-4 ${
-                                    isActive 
-                                    ? 'bg-gold-primary/10 border-gold-primary text-gold-primary font-bold shadow-sm scale-[1.01]' 
+                                className={`whitespace-pre-wrap py-2 px-2 md:px-4 rounded-lg cursor-pointer transition-all duration-300 border-l-4 ${isActive
+                                    ? 'bg-gold-primary/10 border-gold-primary text-gold-primary font-bold shadow-sm scale-[1.01]'
                                     : 'border-transparent hover:bg-white/5 hover:border-white/10'
-                                }`}
+                                    }`}
                             >
                                 {line.text}
                             </div>

@@ -28,7 +28,7 @@ export default async function NotationDetailPage({ params }: NotationDetailPageP
     return (
         <main className="min-h-screen pt-32 pb-20 px-4 md:px-6 lg:px-8">
             <div className="max-w-[98%] xl:max-w-[1600px] mx-auto">
-                <Link 
+                <Link
                     href="/notations"
                     className="inline-flex items-center space-x-2 text-foreground/60 hover:text-gold-primary transition-colors mb-8 group"
                 >
@@ -36,8 +36,8 @@ export default async function NotationDetailPage({ params }: NotationDetailPageP
                     <span>Back to Notations</span>
                 </Link>
 
-                <div className="glass p-4 md:p-6 lg:p-8 rounded-3xl border border-gold-primary/20">
-                    <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6 mb-6 text-center md:text-left">
+                <div className="glass pt-6 px-8 pb-12 md:pt-8 md:px-12 md:pb-16 lg:pt-10 lg:px-20 lg:pb-24 rounded-3xl border border-gold-primary/20 mt-4 mb-16">
+                    <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6 mb-10 text-center md:text-left">
                         <div className="w-20 h-20 md:w-16 md:h-16 rounded-full bg-gold-primary/10 flex items-center justify-center text-gold-primary shrink-0">
                             <Music size={32} />
                         </div>

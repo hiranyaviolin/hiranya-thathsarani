@@ -21,7 +21,7 @@ export default function NotationsPage() {
 
                 {/* Featured Video Section */}
                 <div className="mb-16 md:mb-24 max-w-4xl mx-auto rounded-3xl overflow-hidden glass border border-gold-primary/20 shadow-2xl">
-                    <div className="aspect-video relative">
+                    {/* <div className="aspect-video relative">
                         <iframe
                             className="absolute top-0 left-0 w-full h-full"
                             src="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -29,10 +29,10 @@ export default function NotationsPage() {
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                         ></iframe>
-                    </div>
+                    </div> */}
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                     {NOTATIONS_DATA.map((notation) => (
                         <NotationCard key={notation.id} notation={notation} />
                     ))}

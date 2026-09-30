@@ -22,19 +22,21 @@ export const NOTATIONS_DATA: Notation[] = [
         videoId: "gYN6r4cwV28",
         // https://youtu.be/gYN6r4cwV28?si=xVsN43zsgW2_3U1C
         notationLines: [
-            { startTime: 0, endTime: 0.03, text: "Starting...\n" },
-            { startTime: 0.03, endTime: 0.07, text: "[Intro]\n++ සරි රිරි රිරි  | සරි මරි -- රිරි  | සරි මරි -- රිරි |ස- රිප මග රි- |\n" },
-            { startTime: 0.07, endTime: 0.12, text: "[Section A]\n-- සරි රිරි රිරි  | සරි මරි -- රි-  | ස- රි- ම- රි-  | -- රිප මග රිස |\n" },
-            { startTime: 0.12, endTime: 0.16, text: "[Section B]\n++ සරි රිරි රිරි | සරි මරි -- රිරි  | සරි මරි -- රිරි  | ස- රිප මග රි- |\n" },
-            { startTime: 0.16, endTime: 0.19, text: "[Ending]\n-- සරි රිරි රිරි  | සරි මරි -- රි- |සරි -- -- -ධ  |\n" },
-            { startTime: 0.19, endTime: 0.23, text: "[Ending]\nප- ධ- ම- ප-  | ධ- -- -- -- |-- -- ධ- ස-  | ධ- -- -- ග-  |\n" },
-            { startTime: 0.23, endTime: 0.27, text: "[Ending]\nරි- ග- ස- රි-  | ප- -- -- -- |ගප -ධ නිධ -ප  | ම- ග- -- ග-  |\n" },
-            { startTime: 0.27, endTime: 0.31, text: "[Ending]\nරි- ග- ස- රි-  | රිප මග රි- -- |-- -- ප- --  | ම- -ග -- -ස  |\n" },
-            { startTime: 0.31, endTime: 0.35, text: "[Ending]\nස- රි- පම ගරි  | රි- -- -- -- |-- -- -- --  | -- -- -- -ධ  |\n" },
-            { startTime: 0.35, endTime: 0.39, text: "[Ending]\nප- ධ- ම- ප-  | ධ- -- -- -- |-- -- ධ- ස-  | ධ- -- -- ග-  |\n" },
-            { startTime: 0.39, endTime: 0.43, text: "[Ending]\nරි- ග- ස- රි-  | ප- -- -- -- |ගප -ධ නිධ -ප  | ම- ග- -- ග-  |\n" },
-            { startTime: 0.43, endTime: 0.47, text: "[Ending]\nරි- ග- ස- රි-  | රිප මග රි- -- |-- ධස රිම ධප  | ම- -ග -- -ස  |\n" },
-            { startTime: 0.47, endTime: 0.51, text: "[Ending]\nස- රි- ම- ග-  | පම ගරි -- -- |-- -- -- --  | -- -- -- --  |\n" }
+            { startTime: 0, endTime: 3, text: "Starting...\n" },
+            { startTime: 3, endTime: 7, text: "[Section A]\n++ සරි රිරි රිරි  | සරි මරි -- රිරි  | සරි මරි -- රිරි |ස- රිප මග රි- |\n" },
+            { startTime: 7, endTime: 12, text: "-- සරි රිරි රිරි  | සරි මරි -- රි-  | ස- රි- ම- රි-  | -- රිප මග රිස |\n" },
+            { startTime: 12, endTime: 16, text: "++ සරි රිරි රිරි | සරි මරි -- රිරි  | සරි මරි -- රිරි  | ස- රිප මග රි- |\n" },
+            { startTime: 16, endTime: 19, text: "-- සරි රිරි රිරි  | සරි මරි -- රි- |සරි -- -- -ධ  |\n" },
+
+            { startTime: 19, endTime: 24, text: "[Section B]\nප- ධ- ම- ප-  | ධ- -- -- -- |-- -- ධ- ස-  | ධ- -- -- ග-  |\n" },
+            { startTime: 24, endTime: 28, text: "රි- ග- ස- රි-  | ප- -- -- -- |ගප -ධ නිධ -ප  | ම- ග- -- ග-  |\n" },
+            { startTime: 28, endTime: 32, text: "රි- ග- ස- රි-  | රිප මග රි- -- |-- -- ප- --  | ම- -ග -- -ස  |\n" },
+            { startTime: 32, endTime: 36, text: "ස- රි- පම ගරි  | රි- -- -- -- |-- -- -- --  | -- -- -- -ධ  |\n" },
+
+            { startTime: 37, endTime: 41, text: "\nප- ධ- ම- ප-  | ධ- -- -- -- |-- -- ධ- ස-  | ධ- -- -- ග-  |\n" },
+            { startTime: 41, endTime: 45, text: "රි- ග- ස- රි-  | ප- -- -- -- |ගප -ධ නිධ -ප  | ම- ග- -- ග-  |\n" },
+            { startTime: 45, endTime: 50, text: "රි- ග- ස- රි-  | රිප මග රි- -- |-- ධස රිම ධප  | ම- -ග -- -ස  |\n" },
+            { startTime: 50, endTime: 54, text: "-- රි- පම ගරි  | රි- -- -- |-- -- -- --  | -- -- -- --  |\n" }
         ],
     },
 
@@ -43,7 +45,7 @@ export const NOTATIONS_DATA: Notation[] = [
         title: "Lathin Kankariya",
         imageUrl: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=1000&auto=format&fit=crop",
         description: "true love.",
-        videoId: "dQw4w9WgXcQ", // Replace with real YouTube video ID
+        videoId: "dQw4w9WgXcQ", // real YouTube video ID
         notationLines: [
             { startTime: 0, endTime: 5, text: "Title: Sri Lankan Melody\nTempo: 85 BPM\nKey: D Minor\n" },
             { startTime: 5, endTime: 12, text: "[Intro]\nD4  F4  A4  | G4  F4  E4  | D4  ---  --- |\nd   f   a   | g   f   e   | d   ---  --- |\n" },
