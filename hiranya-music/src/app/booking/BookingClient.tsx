@@ -22,7 +22,7 @@ export default function BookingPage() {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        
+
         // Basic validation
         if (!formData.name || !formData.email || !formData.date || !formData.message) {
             alert('Please fill in all required fields.');
@@ -208,12 +208,10 @@ export default function BookingPage() {
                         transition={{ duration: 0.8 }}
                         className="lg:col-span-7"
                     >
-                        <form 
-                            name="booking" 
+                        <form
+                            name="booking"
                             method="POST"
-                            data-netlify="true" 
-                            netlify-honeypot="bot-field"
-                            onSubmit={handleSubmit} 
+                            onSubmit={handleSubmit}
                             className="glass p-8 md:p-12 rounded-3xl border border-gold-primary/20 space-y-6"
                         >
                             <input type="hidden" name="form-name" value="booking" />
