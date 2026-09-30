@@ -9,9 +9,9 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full overflow-hidden">
       <Hero />
-      {/* <AboutTeaser /> */}
-      {/* <SriLankanFocus /> */}
-      {/* <EventsTeaser /> */}
+      <AboutTeaser />
+      <SriLankanFocus />
+      <EventsTeaser />
 <div>
   
 </div>
