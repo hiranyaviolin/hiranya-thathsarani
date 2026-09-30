@@ -17,8 +17,8 @@ export const NOTATIONS_DATA: Notation[] = [
     {
         id: "latin-kankariya",
         title: "Latin Kankariya",
-        imageUrl: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=1000&auto=format&fit=crop",
-        description: "Latin Kankariya is a traditional Sri Lankan folk song that tells the story of a young woman's journey to find true love.",
+        imageUrl: "/notations/1.jpeg",
+        description: "Latin Kankaariya (ලතින් කංකාරිය) | Charitha Attalage ft. Hashani Wasana | Prathap Eash",
         videoId: "gYN6r4cwV28",
         // https://youtu.be/gYN6r4cwV28?si=xVsN43zsgW2_3U1C
         notationLines: [
@@ -43,24 +43,24 @@ export const NOTATIONS_DATA: Notation[] = [
     {
         id: "bowitiya-mal",
         title: "Bowitiya Mal",
-        imageUrl: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=1000&auto=format&fit=crop",
+        imageUrl: "/notations/2.jpeg",
         description: "බෝවිටියා මල් (Bowitiya Mal) by Ravi Jay ft. Nipuni Sharada",
         videoId: "cWKNUqpwz5c", // real YouTube video ID
         // https://youtu.be/cWKNUqpwz5c?si=k_wlRY2DcFWdEPv4
         notationLines: [
-            { startTime: 0, endTime: 5, text: "Let's play...\n\n" },
+            { startTime: 0, endTime: 6, text: "Let's play...\n\n" },
             // { startTime: 5, endTime: 15, text: "+ ගම́ ප ම́ | ම́ - ම́ ම́ | - ගම́ ප ම́ | ම́ - ම́ ම́ |\n\n+ ගග ම́ ම́ | නි̲ - - ධ̲ප | ම́ ග ම́ - | - - - - |\n" },
             // { startTime: 15, endTime: 25, text: "+ ගම́ ප ම́ | ම́ - ම́ ම́ | - ගම́ ප ම́ | ම́ - ම́ ම́ |\n\n+ ගග ම́ ම́ | නි̲ - - ධ̲ප | ම́ ප ම́ - | - - - - |\n" },
             // { startTime: 25, endTime: 35, text: "ම ම ම - | ප - ප ම | ප ම - - | - - - - |\n\n+ - - ප | ස̇ - නි̲ ධ̲ප | ම́ - - - | - - - - |\n" },
             // { startTime: 35, endTime: 45, text: "ම́ ම́ ම́ - | ප - ප ම́ | ප ම́ - - | - - - - |\n\n+ - - ප | ස̇ - නි̲ ධ̲ප | ම́ - - | - - - - |\n" }
-            { startTime: 5, endTime: 15, text: "[Section A]\n+ G Ḿ P Ḿ | Ḿ - Ḿ Ḿ | - G Ḿ P Ḿ | Ḿ - Ḿ Ḿ |\n" },
-            { startTime: 5, endTime: 15, text: "+ G G Ḿ Ḿ | N̲ - - (D̲ P) | Ḿ G Ḿ - | - - - - |\n" },
-            { startTime: 15, endTime: 25, text: "+ G Ḿ P Ḿ | Ḿ - Ḿ Ḿ | - G Ḿ P Ḿ | Ḿ - Ḿ Ḿ |\n" },
-            { startTime: 5, endTime: 15, text: "+ G G Ḿ Ḿ | N̲ - - D̲ P | Ḿ P Ḿ - | - - - - |\n\n" },
-            { startTime: 25, endTime: 35, text: "[Section B]\nM M M - | P - P M | P M - - | - - - - |\n" },
-            { startTime: 5, endTime: 15, text: "+ - - P | Ṡ - N̲ D̲ P | Ḿ - - - | - - - - |\n" },
-            { startTime: 35, endTime: 45, text: "Ḿ Ḿ Ḿ - | P - P Ḿ | P Ḿ - - | - - - - |\n" },
-            { startTime: 5, endTime: 15, text: "+ - - P | Ṡ - N̲ D̲ P | Ḿ - - | - - - - |\n" }
+            { startTime: 6, endTime: 10, text: "[Section A]\n+ G Ḿ P Ḿ | Ḿ - Ḿ Ḿ | - G Ḿ P Ḿ | Ḿ - Ḿ Ḿ |\n" },
+            { startTime: 10, endTime: 15, text: "+ G G Ḿ Ḿ | N̲ - - (D̲ P) | Ḿ G Ḿ - | - - - - |\n" },
+            { startTime: 15, endTime: 20, text: "+ G Ḿ P Ḿ | Ḿ - Ḿ Ḿ | - G Ḿ P Ḿ | Ḿ - Ḿ Ḿ |\n" },
+            { startTime: 20, endTime: 25, text: "+ G G Ḿ Ḿ | N̲ - - D̲ P | Ḿ P Ḿ - | - - - - |\n\n" },
+            { startTime: 25, endTime: 30, text: "[Section B]\nM M M - | P - P M | P M - - | - - - - |\n" },
+            { startTime: 30, endTime: 34, text: "+ - - P | Ṡ - N̲ D̲ P | Ḿ - - - | - - - - |\n" },
+            { startTime: 34, endTime: 40, text: "Ḿ Ḿ Ḿ - | P - P Ḿ | P Ḿ - - | - - - - |\n" },
+            { startTime: 40, endTime: 44, text: "+ - - P | Ṡ - N̲ D̲ P | Ḿ - - | - - - - |\n" }
         ],
     }
 ];
