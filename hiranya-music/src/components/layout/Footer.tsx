@@ -111,11 +111,12 @@ export default function Footer() {
                         <p className="text-foreground/60 text-sm mb-4">{FOOTER.newsletterText}</p>
                         <div className="flex flex-col space-y-2">
                             <input
+                                suppressHydrationWarning
                                 type="email"
                                 placeholder={FOOTER.newsletterPlaceholder}
                                 className="bg-background border border-gold-primary/20 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-gold-primary"
                             />
-                            <button className="bg-gold-primary text-background font-bold py-2 rounded-lg text-sm hover:bg-gold-secondary transition-all">
+                            <button suppressHydrationWarning className="bg-gold-primary text-background font-bold py-2 rounded-lg text-sm hover:bg-gold-secondary transition-all">
                                 {FOOTER.newsletterSubscribe}
                             </button>
                         </div>
