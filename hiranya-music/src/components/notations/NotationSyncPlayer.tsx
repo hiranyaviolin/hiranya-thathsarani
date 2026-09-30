@@ -43,7 +43,7 @@ export default function NotationSyncPlayer({ notation }: NotationSyncPlayerProps
     };
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-6 lg:gap-8 items-start">
             {/* Video Player - Sticky on large screens */}
             {notation.videoId && (
                 <div className="lg:sticky lg:top-32 w-full aspect-video rounded-2xl overflow-hidden glass border border-white/5 relative z-10 shadow-2xl">
@@ -76,7 +76,7 @@ export default function NotationSyncPlayer({ notation }: NotationSyncPlayerProps
                     <h2 className="text-2xl font-serif font-bold">Interactive Notations</h2>
                 </div>
                 
-                <div className="bg-background/40 rounded-xl p-8 border border-white/5 font-mono text-sm md:text-base leading-relaxed text-foreground/80 lg:max-h-[70vh] overflow-y-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                <div className="bg-background/40 rounded-xl p-4 md:p-6 border border-white/5 font-mono text-sm md:text-base leading-relaxed text-foreground/80 lg:max-h-[70vh] overflow-y-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                     {notation.notationLines.map((line, index) => {
                         const isActive = currentTime >= line.startTime && currentTime < line.endTime;
                         
@@ -84,7 +84,7 @@ export default function NotationSyncPlayer({ notation }: NotationSyncPlayerProps
                             <div 
                                 key={index} 
                                 onClick={() => handleLineClick(line.startTime)}
-                                className={`whitespace-pre-wrap py-2 px-4 rounded-lg cursor-pointer transition-all duration-300 border-l-4 ${
+                                className={`whitespace-pre-wrap py-2 px-2 md:px-4 rounded-lg cursor-pointer transition-all duration-300 border-l-4 ${
                                     isActive 
                                     ? 'bg-gold-primary/10 border-gold-primary text-gold-primary font-bold shadow-sm scale-[1.01]' 
                                     : 'border-transparent hover:bg-white/5 hover:border-white/10'
