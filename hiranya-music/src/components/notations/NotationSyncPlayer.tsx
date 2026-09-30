@@ -65,6 +65,25 @@ export default function NotationSyncPlayer({ notation }: NotationSyncPlayerProps
         }
     };
 
+    const formatNotationText = (text: string) => {
+        return text.split('\n').map((row, idx) => {
+            if (!row.trim()) {
+                return <div key={idx} className="h-2"></div>;
+            }
+            const parts = row.split('|');
+            // If there are exactly 4 columns (5 parts when split by '|' if it ends with '|')
+            if (parts.length === 5) {
+                return (
+                    <div key={idx} className="leading-loose md:leading-relaxed">
+                        <span className="block md:inline whitespace-nowrap md:whitespace-pre-wrap">{parts[0]}|{parts[1]}|</span>
+                        <span className="block md:inline whitespace-nowrap md:whitespace-pre-wrap">{parts[2].replace(/^\s+/, '')}|{parts[3]}|</span>
+                    </div>
+                );
+            }
+            return <div key={idx} className="whitespace-nowrap md:whitespace-pre-wrap">{row}</div>;
+        });
+    };
+
     return (
         <>
             <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-6 lg:gap-8 items-start">
@@ -102,7 +121,7 @@ export default function NotationSyncPlayer({ notation }: NotationSyncPlayerProps
 
                     <div
                         ref={containerRef}
-                        className="relative bg-background/40 rounded-xl p-6 md:p-8 border border-white/5 font-mono text-sm md:text-base leading-relaxed text-foreground/80 lg:max-h-[50vh] overflow-y-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                        className="relative bg-background/40 rounded-xl p-6 md:p-8 border border-white/5 font-mono text-xs sm:text-sm md:text-base leading-relaxed text-foreground/80 max-h-[35vh] lg:max-h-[50vh] overflow-y-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
                     >
                         {notation.notationLines.map((line, index) => {
                             const isActive = index === activeIndex;
@@ -117,7 +136,7 @@ export default function NotationSyncPlayer({ notation }: NotationSyncPlayerProps
                                         : 'border-transparent hover:bg-white/5 hover:border-white/10'
                                         }`}
                                 >
-                                    {line.text}
+                                    {formatNotationText(line.text)}
                                 </div>
                             );
                         })}
