@@ -22,7 +22,7 @@ export const NOTATIONS_DATA: Notation[] = [
         videoId: "gYN6r4cwV28",
         // https://youtu.be/gYN6r4cwV28?si=xVsN43zsgW2_3U1C
         notationLines: [
-            { startTime: 0, endTime: 3, text: "Starting...\n" },
+            { startTime: 0, endTime: 3, text: "Let's play...\n\n" },
             { startTime: 3, endTime: 7, text: "[Section A]\n++ සරි රිරි රිරි  | සරි මරි -- රිරි  | සරි මරි -- රිරි |ස- රිප මග රි- |\n" },
             { startTime: 7, endTime: 12, text: "-- සරි රිරි රිරි  | සරි මරි -- රි-  | ස- රි- ම- රි-  | -- රිප මග රිස |\n" },
             { startTime: 12, endTime: 16, text: "++ සරි රිරි රිරි | සරි මරි -- රිරි  | සරි මරි -- රිරි  | ස- රිප මග රි- |\n" },
@@ -41,17 +41,26 @@ export const NOTATIONS_DATA: Notation[] = [
     },
 
     {
-        id: "id2",
-        title: "Lathin Kankariya",
+        id: "bowitiya-mal",
+        title: "Bowitiya Mal",
         imageUrl: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=1000&auto=format&fit=crop",
-        description: "true love.",
-        videoId: "dQw4w9WgXcQ", // real YouTube video ID
+        description: "බෝවිටියා මල් (Bowitiya Mal) by Ravi Jay ft. Nipuni Sharada",
+        videoId: "cWKNUqpwz5c", // real YouTube video ID
+        // https://youtu.be/cWKNUqpwz5c?si=k_wlRY2DcFWdEPv4
         notationLines: [
-            { startTime: 0, endTime: 5, text: "Title: Sri Lankan Melody\nTempo: 85 BPM\nKey: D Minor\n" },
-            { startTime: 5, endTime: 12, text: "[Intro]\nD4  F4  A4  | G4  F4  E4  | D4  ---  --- |\nd   f   a   | g   f   e   | d   ---  --- |\n" },
-            { startTime: 12, endTime: 24, text: "[Section A]\nA4  A4  G4  | A4  F4  D4  | E4  F4  G4  | A4  ---  --- |\na   a   g   | a   f   d   | e   f   g   | a   ---  --- |\n" },
-            { startTime: 24, endTime: 35, text: "[Section B]\nD5  C5  Bb4 | A4  G4  F4  | E4  F4  G4  | A4  ---  --- |\nd'  c'  bb  | a   g   f   | e   f   g   | a   ---  --- |\n" },
-            { startTime: 35, endTime: 50, text: "[Ending]\nD4  F4  A4  | D5  ---  --- ||\nd   f   a   | d'  ---  --- ||" }
+            { startTime: 0, endTime: 5, text: "Let's play...\n\n" },
+            // { startTime: 5, endTime: 15, text: "+ ගම́ ප ම́ | ම́ - ම́ ම́ | - ගම́ ප ම́ | ම́ - ම́ ම́ |\n\n+ ගග ම́ ම́ | නි̲ - - ධ̲ප | ම́ ග ම́ - | - - - - |\n" },
+            // { startTime: 15, endTime: 25, text: "+ ගම́ ප ම́ | ම́ - ම́ ම́ | - ගම́ ප ම́ | ම́ - ම́ ම́ |\n\n+ ගග ම́ ම́ | නි̲ - - ධ̲ප | ම́ ප ම́ - | - - - - |\n" },
+            // { startTime: 25, endTime: 35, text: "ම ම ම - | ප - ප ම | ප ම - - | - - - - |\n\n+ - - ප | ස̇ - නි̲ ධ̲ප | ම́ - - - | - - - - |\n" },
+            // { startTime: 35, endTime: 45, text: "ම́ ම́ ම́ - | ප - ප ම́ | ප ම́ - - | - - - - |\n\n+ - - ප | ස̇ - නි̲ ධ̲ප | ම́ - - | - - - - |\n" }
+            { startTime: 5, endTime: 15, text: "[Section A]\n+ G Ḿ P Ḿ | Ḿ - Ḿ Ḿ | - G Ḿ P Ḿ | Ḿ - Ḿ Ḿ |\n" },
+            { startTime: 5, endTime: 15, text: "+ G G Ḿ Ḿ | N̲ - - (D̲ P) | Ḿ G Ḿ - | - - - - |\n" },
+            { startTime: 15, endTime: 25, text: "+ G Ḿ P Ḿ | Ḿ - Ḿ Ḿ | - G Ḿ P Ḿ | Ḿ - Ḿ Ḿ |\n" },
+            { startTime: 5, endTime: 15, text: "+ G G Ḿ Ḿ | N̲ - - D̲ P | Ḿ P Ḿ - | - - - - |\n\n" },
+            { startTime: 25, endTime: 35, text: "[Section B]\nM M M - | P - P M | P M - - | - - - - |\n" },
+            { startTime: 5, endTime: 15, text: "+ - - P | Ṡ - N̲ D̲ P | Ḿ - - - | - - - - |\n" },
+            { startTime: 35, endTime: 45, text: "Ḿ Ḿ Ḿ - | P - P Ḿ | P Ḿ - - | - - - - |\n" },
+            { startTime: 5, endTime: 15, text: "+ - - P | Ṡ - N̲ D̲ P | Ḿ - - | - - - - |\n" }
         ],
     }
 ];
