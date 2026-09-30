@@ -11,17 +11,56 @@ export default function BookingPage() {
         name: '',
         email: '',
         phone: '',
-        eventType: BOOKING_FORM.eventOptions[0],
+        eventType: '',
         date: '',
         message: ''
     });
 
     const [whatsAppMessage, setWhatsAppMessage] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // In a real app, this would send the email
-        alert(BOOKING_FORM.successAlert);
+        
+        // Basic validation
+        if (!formData.name || !formData.email || !formData.date || !formData.message) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+
+        setIsSubmitting(true);
+        setSubmitStatus('idle');
+
+        const form = e.currentTarget;
+        const submitData = new FormData(form);
+
+        try {
+            const response = await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                // @ts-ignore
+                body: new URLSearchParams(submitData).toString(),
+            });
+
+            if (response.ok) {
+                setSubmitStatus('success');
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    eventType: '',
+                    date: '',
+                    message: ''
+                });
+            } else {
+                setSubmitStatus('error');
+            }
+        } catch (error) {
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -169,28 +208,54 @@ export default function BookingPage() {
                         transition={{ duration: 0.8 }}
                         className="lg:col-span-7"
                     >
-                        <form onSubmit={handleSubmit} className="glass p-8 md:p-12 rounded-3xl border border-gold-primary/20 space-y-6">
+                        <form 
+                            name="booking" 
+                            method="POST"
+                            data-netlify="true" 
+                            netlify-honeypot="bot-field"
+                            onSubmit={handleSubmit} 
+                            className="glass p-8 md:p-12 rounded-3xl border border-gold-primary/20 space-y-6"
+                        >
+                            <input type="hidden" name="form-name" value="booking" />
+                            <p className="hidden">
+                                <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                            </p>
+
+                            <div className="space-y-2">
+                                <label className="text-xs uppercase tracking-widest text-foreground/50 font-bold ml-1">{BOOKING_FORM.fullNameLabel}</label>
+                                <input
+                                    required
+                                    type="text"
+                                    name="name"
+                                    className="w-full bg-background/50 border border-gold-primary/10 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-gold-primary transition-all"
+                                    placeholder={BOOKING_FORM.fullNamePlaceholder}
+                                    value={formData.name}
+                                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                />
+                            </div>
+
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div className="space-y-2">
-                                    <label className="text-xs uppercase tracking-widest text-foreground/50 font-bold ml-1">{BOOKING_FORM.fullNameLabel}</label>
-                                    <input
-                                        required
-                                        type="text"
-                                        className="w-full bg-background/50 border border-gold-primary/10 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-gold-primary transition-all"
-                                        placeholder={BOOKING_FORM.fullNamePlaceholder}
-                                        value={formData.name}
-                                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                    />
-                                </div>
                                 <div className="space-y-2">
                                     <label className="text-xs uppercase tracking-widest text-foreground/50 font-bold ml-1">{BOOKING_FORM.emailLabel}</label>
                                     <input
                                         required
                                         type="email"
+                                        name="email"
                                         className="w-full bg-background/50 border border-gold-primary/10 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-gold-primary transition-all"
                                         placeholder={BOOKING_FORM.emailPlaceholder}
                                         value={formData.email}
                                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-xs uppercase tracking-widest text-foreground/50 font-bold ml-1">Phone Number (Optional)</label>
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        className="w-full bg-background/50 border border-gold-primary/10 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-gold-primary transition-all"
+                                        placeholder="Enter your phone number"
+                                        value={formData.phone}
+                                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                                     />
                                 </div>
                             </div>
@@ -198,20 +263,26 @@ export default function BookingPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-xs uppercase tracking-widest text-foreground/50 font-bold ml-1">{BOOKING_FORM.eventTypeLabel}</label>
-                                    <select
-                                        className="w-full bg-background/50 border border-gold-primary/10 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-gold-primary transition-all appearance-none"
+                                    <input
+                                        required
+                                        type="text"
+                                        name="eventType"
+                                        className="w-full bg-background/50 border border-gold-primary/10 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-gold-primary transition-all"
+                                        placeholder="e.g. Wedding, Concert"
                                         value={formData.eventType}
-                                        onChange={(e) => setFormData({ ...formData, eventType: e.target.value })}
-                                    >
-                                        {BOOKING_FORM.eventOptions.map((opt) => (
-                                            <option key={opt}>{opt}</option>
-                                        ))}
-                                    </select>
+                                        onChange={(e) => {
+                                            if (/^[a-zA-Z\s]*$/.test(e.target.value)) {
+                                                setFormData({ ...formData, eventType: e.target.value });
+                                            }
+                                        }}
+                                    />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-xs uppercase tracking-widest text-foreground/50 font-bold ml-1">{BOOKING_FORM.eventDateLabel}</label>
                                     <input
+                                        required
                                         type="date"
+                                        name="date"
                                         className="w-full bg-background/50 border border-gold-primary/10 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-gold-primary transition-all"
                                         value={formData.date}
                                         onChange={(e) => setFormData({ ...formData, date: e.target.value })}
@@ -223,6 +294,7 @@ export default function BookingPage() {
                                 <label className="text-xs uppercase tracking-widest text-foreground/50 font-bold ml-1">{BOOKING_FORM.detailsLabel}</label>
                                 <textarea
                                     required
+                                    name="message"
                                     rows={5}
                                     className="w-full bg-background/50 border border-gold-primary/10 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-gold-primary transition-all resize-none"
                                     placeholder={BOOKING_FORM.detailsPlaceholder}
@@ -231,11 +303,24 @@ export default function BookingPage() {
                                 />
                             </div>
 
+                            {submitStatus === 'success' && (
+                                <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-xl text-green-500 text-sm text-center">
+                                    Thank you! Your inquiry has been sent successfully.
+                                </div>
+                            )}
+
+                            {submitStatus === 'error' && (
+                                <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-500 text-sm text-center">
+                                    Oops! Something went wrong. Please try again or email us directly.
+                                </div>
+                            )}
+
                             <button
                                 type="submit"
-                                className="w-full bg-gold-primary hover:bg-gold-secondary text-background font-bold py-5 rounded-xl transition-all flex items-center justify-center space-x-3 shadow-lg shadow-gold-primary/20 transform hover:-translate-y-1"
+                                disabled={isSubmitting}
+                                className="w-full bg-gold-primary hover:bg-gold-secondary text-background font-bold py-5 rounded-xl transition-all flex items-center justify-center space-x-3 shadow-lg shadow-gold-primary/20 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
                             >
-                                <span>{BOOKING_FORM.submitButton}</span>
+                                <span>{isSubmitting ? 'SENDING...' : BOOKING_FORM.submitButton}</span>
                                 <Send size={18} />
                             </button>
                         </form>
