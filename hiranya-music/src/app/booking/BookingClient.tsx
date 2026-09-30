@@ -36,7 +36,7 @@ export default function BookingPage() {
         const submitData = new FormData(form);
 
         try {
-            const response = await fetch('/', {
+            const response = await fetch('/form-detection.html', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 // @ts-ignore
