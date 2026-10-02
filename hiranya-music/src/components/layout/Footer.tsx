@@ -16,7 +16,7 @@ export default function Footer() {
             const isMobile = window.innerWidth < 768;
             setAnimDuration(isMobile ? 8 : 15);
         };
-        
+
         updateDuration(); // Set initially
         window.addEventListener('resize', updateDuration);
         return () => window.removeEventListener('resize', updateDuration);
@@ -28,10 +28,10 @@ export default function Footer() {
             <div className="absolute -top-[80px] left-0 w-full h-[80px] pointer-events-none z-20 overflow-hidden">
                 <motion.div
                     animate={{ x: ["-100%", "100vw"] }}
-                    transition={{ 
-                        duration: animDuration, 
-                        repeat: Infinity, 
-                        ease: "linear" 
+                    transition={{
+                        duration: animDuration,
+                        repeat: Infinity,
+                        ease: "linear"
                     }}
                     className="absolute top-0 left-0 h-full w-auto flex items-end"
                 >
@@ -43,9 +43,18 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                     {/* Brand */}
                     <div className="col-span-1 md:col-span-1">
-                        <Link href="/" className="flex items-center space-x-2 mb-6">
-                            <div className="w-8 h-8 bg-gold-primary rounded-full flex items-center justify-center text-background">
-                                <Music size={16} />
+                        <Link
+                            href="/"
+                            className="flex items-center space-x-2 mb-6"
+                            onClick={(e) => {
+                                if (window.location.pathname === '/') {
+                                    e.preventDefault();
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }
+                            }}
+                        >
+                            <div className="h-12 w-auto shrink-0 flex items-center justify-center">
+                                <img src="/l.png" alt="Logo" className="h-full w-auto object-contain mix-blend-lighten" />
                             </div>
                             <span className="text-xl font-serif font-bold text-gold-primary">{FOOTER.brand}</span>
                         </Link>
@@ -73,13 +82,13 @@ export default function Footer() {
                                 let href = `/${item.toLowerCase()}`;
                                 if (item.toLowerCase() === 'home') href = '/';
                                 if (item.toLowerCase() === 'contact') href = '/booking';
-                                
+
                                 return (
-                                <li key={item}>
-                                    <Link href={href} className="text-foreground/60 hover:text-gold-primary transition-colors text-sm">
-                                        {item}
-                                    </Link>
-                                </li>
+                                    <li key={item}>
+                                        <Link href={href} className="text-foreground/60 hover:text-gold-primary transition-colors text-sm">
+                                            {item}
+                                        </Link>
+                                    </li>
                                 );
                             })}
                         </ul>
@@ -105,27 +114,43 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Newsletter (Simplified) */}
+                    {/* YouTube Subscribe */}
                     <div>
-                        <h4 className="text-gold-primary font-serif font-bold mb-6 uppercase tracking-wider text-sm">{FOOTER.newsletterTitle}</h4>
-                        <p className="text-foreground/60 text-sm mb-4">{FOOTER.newsletterText}</p>
-                        <div className="flex flex-col space-y-2">
-                            <input
-                                suppressHydrationWarning
-                                type="email"
-                                placeholder={FOOTER.newsletterPlaceholder}
-                                className="bg-background border border-gold-primary/20 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-gold-primary"
-                            />
-                            <button suppressHydrationWarning className="bg-gold-primary text-background font-bold py-2 rounded-lg text-sm hover:bg-gold-secondary transition-all">
-                                {FOOTER.newsletterSubscribe}
-                            </button>
+                        <h4 className="text-gold-primary font-serif font-bold mb-6 uppercase tracking-wider text-sm">{FOOTER.youtubeTitle}</h4>
+                        <p className="text-foreground/60 text-sm mb-4">{FOOTER.youtubeText}</p>
+                        <div className="flex flex-col space-y-3">
+                            <Link href={VARIABLES.youtubeUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full bg-[#FF0000] text-white font-bold py-3 rounded-xl text-sm hover:bg-[#CC0000] transition-all gap-2 shadow-[0_4px_14px_0_rgba(255,0,0,0.39)]">
+                                <Youtube size={20} />
+                                {FOOTER.youtubeSubscribeBtn}
+                            </Link>
+                            <div className="pt-2">
+                                <p className="text-foreground/50 text-[11px] uppercase tracking-widest mb-3 font-semibold">{FOOTER.socialText}</p>
+                                <div className="flex gap-2">
+                                    <Link href={VARIABLES.instagramUrl} target="_blank" rel="noopener noreferrer" className="flex-1 inline-flex items-center justify-center bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white font-bold py-2.5 rounded-xl text-[10px] sm:text-xs hover:opacity-90 transition-all gap-1 shadow-[0_4px_14px_0_rgba(220,39,67,0.39)]">
+                                        <Instagram size={14} />
+                                        Insta
+                                    </Link>
+                                    <Link href={VARIABLES.tiktokUrl} target="_blank" rel="noopener noreferrer" className="flex-1 inline-flex items-center justify-center bg-[#010101] border border-white/10 text-white font-bold py-2.5 rounded-xl text-[10px] sm:text-xs hover:bg-[#111111] transition-all gap-1 shadow-lg hover:border-white/20">
+                                        <svg className="w-[14px] h-[14px]" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z" />
+                                        </svg>
+                                        TikTok
+                                    </Link>
+                                    <Link href={VARIABLES.facebookUrl} target="_blank" rel="noopener noreferrer" className="flex-1 inline-flex items-center justify-center bg-[#1877F2] text-white font-bold py-2.5 rounded-xl text-[10px] sm:text-xs hover:bg-[#166FE5] transition-all gap-1 shadow-[0_4px_14px_0_rgba(24,119,242,0.39)]">
+                                        <Facebook size={14} fill="currentColor" strokeWidth={0} />
+                                        FB
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div className="border-t border-gold-primary/5 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-foreground/40 uppercase tracking-widest">
                     <p>{FOOTER.copyright}</p>
-                    <div className="flex space-x-6 mt-4 md:mt-0">
+                    <div className="flex items-center space-x-6 mt-4 md:mt-0">
+                        <p>Powered by <a href="https://pixor-dev.netlify.app/" className="text-gold-primary font-bold hover:text-gold-secondary transition-colors">Pixor Dev</a></p>
+                        <span className="w-1 h-1 rounded-full bg-foreground/20 hidden md:block"></span>
                         <Link href="#" className="hover:text-gold-primary transition-colors">{FOOTER.privacyPolicy}</Link>
                         <Link href="#" className="hover:text-gold-primary transition-colors">{FOOTER.termsOfService}</Link>
                     </div>

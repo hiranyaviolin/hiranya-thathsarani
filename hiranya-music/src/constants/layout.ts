@@ -1,8 +1,8 @@
 import { VARIABLES } from "./variables";
 
 export const NAVBAR = {
-  brand: VARIABLES.artistName.toUpperCase(),
-  brandSubtitle: VARIABLES.instrumentTitle,
+  brand: "Hiru Thath",
+  brandSubtitle: "Elegance You Can Hear",
   bookNow: "CONTACT",
   links: [
     { name: 'Home', href: '/' },
@@ -16,18 +16,22 @@ export const NAVBAR = {
 };
 
 export const FOOTER = {
-  brand: VARIABLES.artistName.toUpperCase(),
-  brandDescription: `Blending Western Classical elegance with the rich musical heritage of ${VARIABLES.country}. Bringing the soul of the ${VARIABLES.instrument} to every stage.`,
+  brand: "Hiru Thath",
+  brandDescription: "A creative violinist from Sri Lanka who expresses emotions and imagination through music",
   // navTitle: "Navigation",
   // navItems: ['Home', 'About', 'Music', 'Events', 'Lessons'],
   navTitle: "Navigation",
-  navItems: ['Home','About', 'Music', 'Notations', 'Contact'],
+  navItems: ['Home', 'About', 'Music', 'Notations', 'Contact'],
   contactTitle: "Contact",
   bookEventsLink: "Book for Events →",
-  newsletterTitle: "Newsletter",
-  newsletterText: "Stay updated with upcoming concerts and new releases.",
-  newsletterPlaceholder: "Your email address",
-  newsletterSubscribe: "Subscribe",
+  // newsletterTitle: "Newsletter",
+  // newsletterText: "Stay updated with upcoming concerts and new releases.",
+  // newsletterPlaceholder: "Your email address",
+  // newsletterSubscribe: "Subscribe",
+  youtubeTitle: "Subscribe on YouTube",
+  youtubeText: "Join my channel for new releases, covers, and live performances.",
+  youtubeSubscribeBtn: "Subscribe",
+  socialText: "Also follow me on:",
   copyright: `© 2026 Hiranya Thathsarani. All Rights Reserved.`,
   privacyPolicy: "Privacy Policy",
   termsOfService: "Terms of Service",

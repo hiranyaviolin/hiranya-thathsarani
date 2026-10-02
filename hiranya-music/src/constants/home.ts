@@ -2,11 +2,17 @@ import { VARIABLES } from "./variables";
 
 export const HERO = {
   tagline: "Soul in Strings",
-  titlePart1: "The Soul of ",
-  titlePart2: VARIABLES.countryAdjective,
-  titlePart3: ` ${VARIABLES.instrumentTitle} Mastery`,
-  descriptionPart1: "Bridging the timeless elegance of Sri Lankan traditions with the ",
-  descriptionPart2: `${VARIABLES.country}'s musical heritage.`,
+  // Old Title & Description:
+  // titlePart1: "The Soul of ",
+  // titlePart2: VARIABLES.countryAdjective,
+  // titlePart3: ` ${VARIABLES.instrumentTitle} Mastery`,
+  // descriptionPart1: "Bridging the timeless elegance of Sri Lankan traditions with the ",
+  // descriptionPart2: `${VARIABLES.country}'s musical heritage.`,
+
+  titlePart1: "Where Music Meets",
+  titlePart2: "the Soul",
+  descriptionPart1: "Discover the beauty of violin through expressive melodies, heartfelt performances, and a passion for music.",
+
   bookButton: "BOOK A PERFORMANCE",
   listenButton: "LISTEN TO MUSIC",
   scroll: "Scroll",

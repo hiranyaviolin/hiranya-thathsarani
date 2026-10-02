@@ -28,12 +28,21 @@ export default function Navbar() {
             )}
         >
             <div className="max-w-7xl mx-auto flex items-center justify-between">
-                <Link href="/" className="flex items-center space-x-2 group">
+                <Link
+                    href="/"
+                    className="flex items-center space-x-2 group"
+                    onClick={(e) => {
+                        if (window.location.pathname === '/') {
+                            e.preventDefault();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+                    }}
+                >
                     <motion.div
-                        whileHover={{ rotate: 15 }}
-                        className="w-10 h-10 bg-gold-primary rounded-full flex items-center justify-center text-background"
+                        whileHover={{ scale: 1.05 }}
+                        className="h-12 w-auto shrink-0"
                     >
-                        <Music size={20} strokeWidth={2.5} />
+                        <img src="/l.png" alt="Logo" className="h-full w-auto object-contain mix-blend-lighten" />
                     </motion.div>
                     <div className="flex flex-col">
                         <span className="text-xl font-serif font-bold tracking-tight text-gold-primary">
