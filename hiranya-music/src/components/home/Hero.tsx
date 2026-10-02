@@ -6,6 +6,7 @@ import { ChevronRight, Play } from 'lucide-react';
 import Link from 'next/link';
 
 import { HERO } from '@/constants/home';
+import { VARIABLES } from '@/constants/variables';
 
 const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -113,7 +114,9 @@ export default function Hero() {
                         </Link>
 
                         <Link
-                            href="/music"
+                            href={VARIABLES.youtubeUrl}
+                            target="_blank" 
+                            rel="noopener noreferrer"
                             className="flex items-center justify-center w-full sm:w-auto space-x-3 text-gold-primary hover:text-gold-secondary transition-colors font-bold tracking-widest text-sm hover:scale-105"
                         >
                             <div className="w-12 h-12 rounded-full border border-gold-primary/30 flex items-center justify-center group-hover:bg-gold-primary/20 transition-all shadow-[0_0_0_rgba(212,175,55,0)] group-hover:shadow-[0_0_15px_rgba(212,175,55,0.3)]">
@@ -133,7 +136,6 @@ export default function Hero() {
                 className="hidden absolute bottom-10 left-1/2 -translate-x-1/2 md:flex flex-col items-center space-y-2 cursor-pointer"
                 onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
             >
-                <span className="text-[10px] uppercase tracking-[0.3em] text-foreground/30">{HERO.scroll}</span>
                 <motion.div 
                     animate={{ height: ["0%", "100%", "0%"], y: [0, 10, 20], opacity: [0, 1, 0] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
