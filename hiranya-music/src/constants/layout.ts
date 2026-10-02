@@ -1,8 +1,8 @@
 import { VARIABLES } from "./variables";
 
 export const NAVBAR = {
-  brand: VARIABLES.artistName.toUpperCase(),
-  brandSubtitle: VARIABLES.instrumentTitle,
+  brand: "Hiru Thath",
+  brandSubtitle: "Elegance You Can Hear",
   bookNow: "CONTACT",
   links: [
     { name: 'Home', href: '/' },
@@ -16,7 +16,7 @@ export const NAVBAR = {
 };
 
 export const FOOTER = {
-  brand: VARIABLES.artistName.toUpperCase(),
+  brand: "Hiru Thath",
   brandDescription: "A creative violinist from Sri Lanka who expresses emotions and imagination through music",
   // navTitle: "Navigation",
   // navItems: ['Home', 'About', 'Music', 'Events', 'Lessons'],

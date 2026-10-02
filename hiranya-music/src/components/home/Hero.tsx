@@ -87,17 +87,17 @@ export default function Hero() {
                     
                     <motion.h1 
                         variants={itemVariants}
-                        className="text-6xl md:text-8xl font-serif font-bold mb-8 leading-tight"
+                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold mb-8 leading-tight"
                     >
-                        {HERO.titlePart1}<span className="gold-gradient">{HERO.titlePart2}</span> <br className="hidden md:block" />{HERO.titlePart3}
+                        {HERO.titlePart1} <br />
+                        <span className="text-gold-primary">{HERO.titlePart2}</span>
                     </motion.h1>
                     
                     <motion.p 
                         variants={itemVariants}
-                        className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto mb-12 font-light leading-relaxed"
+                        className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto mb-12 font-light leading-relaxed"
                     >
-                        {HERO.descriptionPart1} <br className="hidden md:block" />
-                        {HERO.descriptionPart2}
+                        {HERO.descriptionPart1}
                     </motion.p>
 
                     <motion.div 

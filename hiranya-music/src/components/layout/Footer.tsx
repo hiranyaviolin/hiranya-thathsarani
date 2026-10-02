@@ -43,9 +43,18 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                     {/* Brand */}
                     <div className="col-span-1 md:col-span-1">
-                        <Link href="/" className="flex items-center space-x-2 mb-6">
-                            <div className="w-8 h-8 bg-gold-primary rounded-full flex items-center justify-center text-background">
-                                <Music size={16} />
+                        <Link 
+                            href="/" 
+                            className="flex items-center space-x-2 mb-6"
+                            onClick={(e) => {
+                                if (window.location.pathname === '/') {
+                                    e.preventDefault();
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }
+                            }}
+                        >
+                            <div className="h-12 w-auto shrink-0 flex items-center justify-center">
+                                <img src="/logo2.jpeg" alt="Logo" className="h-full w-auto object-contain mix-blend-lighten" />
                             </div>
                             <span className="text-xl font-serif font-bold text-gold-primary">{FOOTER.brand}</span>
                         </Link>
