@@ -115,6 +115,15 @@ export default function NotationSyncPlayer({ notation }: NotationSyncPlayerProps
                     </div>
                 );
             }
+            // If there are exactly 3 columns (4 parts when split by '|' if it ends with '|')
+            if (parts.length === 4) {
+                return (
+                    <div key={idx} className="leading-loose md:leading-relaxed">
+                        <span className="block md:inline whitespace-nowrap md:whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: `${parts[0]}|${parts[1]}|` }} />
+                        <span className="block md:inline whitespace-nowrap md:whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: `${parts[2].replace(/^\s+/, '')}|` }} />
+                    </div>
+                );
+            }
             return <div key={idx} className="whitespace-nowrap md:whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: row }} />;
         });
     };
