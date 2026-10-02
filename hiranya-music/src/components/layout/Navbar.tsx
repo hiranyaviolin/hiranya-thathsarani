@@ -28,8 +28,8 @@ export default function Navbar() {
             )}
         >
             <div className="max-w-7xl mx-auto flex items-center justify-between">
-                <Link 
-                    href="/" 
+                <Link
+                    href="/"
                     className="flex items-center space-x-2 group"
                     onClick={(e) => {
                         if (window.location.pathname === '/') {
@@ -42,7 +42,7 @@ export default function Navbar() {
                         whileHover={{ scale: 1.05 }}
                         className="h-12 w-auto shrink-0"
                     >
-                        <img src="/logo2.jpeg" alt="Logo" className="h-full w-auto object-contain mix-blend-lighten" />
+                        <img src="/l.png" alt="Logo" className="h-full w-auto object-contain mix-blend-lighten" />
                     </motion.div>
                     <div className="flex flex-col">
                         <span className="text-xl font-serif font-bold tracking-tight text-gold-primary">

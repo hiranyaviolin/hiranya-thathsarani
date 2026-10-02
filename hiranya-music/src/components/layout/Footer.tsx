@@ -16,7 +16,7 @@ export default function Footer() {
             const isMobile = window.innerWidth < 768;
             setAnimDuration(isMobile ? 8 : 15);
         };
-        
+
         updateDuration(); // Set initially
         window.addEventListener('resize', updateDuration);
         return () => window.removeEventListener('resize', updateDuration);
@@ -28,10 +28,10 @@ export default function Footer() {
             <div className="absolute -top-[80px] left-0 w-full h-[80px] pointer-events-none z-20 overflow-hidden">
                 <motion.div
                     animate={{ x: ["-100%", "100vw"] }}
-                    transition={{ 
-                        duration: animDuration, 
-                        repeat: Infinity, 
-                        ease: "linear" 
+                    transition={{
+                        duration: animDuration,
+                        repeat: Infinity,
+                        ease: "linear"
                     }}
                     className="absolute top-0 left-0 h-full w-auto flex items-end"
                 >
@@ -43,8 +43,8 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                     {/* Brand */}
                     <div className="col-span-1 md:col-span-1">
-                        <Link 
-                            href="/" 
+                        <Link
+                            href="/"
                             className="flex items-center space-x-2 mb-6"
                             onClick={(e) => {
                                 if (window.location.pathname === '/') {
@@ -54,7 +54,7 @@ export default function Footer() {
                             }}
                         >
                             <div className="h-12 w-auto shrink-0 flex items-center justify-center">
-                                <img src="/logo2.jpeg" alt="Logo" className="h-full w-auto object-contain mix-blend-lighten" />
+                                <img src="/l.png" alt="Logo" className="h-full w-auto object-contain mix-blend-lighten" />
                             </div>
                             <span className="text-xl font-serif font-bold text-gold-primary">{FOOTER.brand}</span>
                         </Link>
@@ -82,13 +82,13 @@ export default function Footer() {
                                 let href = `/${item.toLowerCase()}`;
                                 if (item.toLowerCase() === 'home') href = '/';
                                 if (item.toLowerCase() === 'contact') href = '/booking';
-                                
+
                                 return (
-                                <li key={item}>
-                                    <Link href={href} className="text-foreground/60 hover:text-gold-primary transition-colors text-sm">
-                                        {item}
-                                    </Link>
-                                </li>
+                                    <li key={item}>
+                                        <Link href={href} className="text-foreground/60 hover:text-gold-primary transition-colors text-sm">
+                                            {item}
+                                        </Link>
+                                    </li>
                                 );
                             })}
                         </ul>
@@ -148,7 +148,9 @@ export default function Footer() {
 
                 <div className="border-t border-gold-primary/5 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-foreground/40 uppercase tracking-widest">
                     <p>{FOOTER.copyright}</p>
-                    <div className="flex space-x-6 mt-4 md:mt-0">
+                    <div className="flex items-center space-x-6 mt-4 md:mt-0">
+                        <p>Powered by <a href="https://pixor-dev.netlify.app/" className="text-gold-primary font-bold hover:text-gold-secondary transition-colors">Pixor Dev</a></p>
+                        <span className="w-1 h-1 rounded-full bg-foreground/20 hidden md:block"></span>
                         <Link href="#" className="hover:text-gold-primary transition-colors">{FOOTER.privacyPolicy}</Link>
                         <Link href="#" className="hover:text-gold-primary transition-colors">{FOOTER.termsOfService}</Link>
                     </div>
