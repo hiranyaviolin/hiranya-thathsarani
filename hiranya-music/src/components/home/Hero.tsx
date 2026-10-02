@@ -79,32 +79,39 @@ export default function Hero() {
                   To change the loop timestamps, edit the 'start' and 'end' variables below. 
                   The values MUST be in total seconds (e.g., for 3 minutes and 12 seconds, use 192).
                 */}
-                <YouTube
-                    videoId="HRzHKsHQIK4"
-                    opts={{
-                        playerVars: {
-                            autoplay: 1,
-                            controls: 0,
-                            rel: 0,
-                            showinfo: 0,
-                            mute: 1,
-                            modestbranding: 1,
-                            playsinline: 1,
-                            start: 192,
-                            end: 225,
-                            disablekb: 1,
-                        },
-                    }}
-                    onReady={(e) => {
-                        e.target.playVideo();
-                    }}
-                    onEnd={(e) => {
-                        e.target.seekTo(192);
-                        e.target.playVideo();
-                    }}
-                    className="absolute inset-0 w-full h-full"
-                    iframeClassName="absolute top-1/2 left-1/2 w-[150vw] h-[150vh] -translate-x-1/2 -translate-y-1/2"
-                />
+                <div 
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+                    style={{ width: 'max(100vw, 178vh)', height: 'max(100vh, 56.25vw)' }}
+                >
+                    <YouTube
+                        videoId="HRzHKsHQIK4"
+                        opts={{
+                            width: '100%',
+                            height: '100%',
+                            playerVars: {
+                                autoplay: 1,
+                                controls: 0,
+                                rel: 0,
+                                showinfo: 0,
+                                mute: 1,
+                                modestbranding: 1,
+                                playsinline: 1,
+                                start: 192,
+                                end: 225,
+                                disablekb: 1,
+                            },
+                        }}
+                        onReady={(e) => {
+                            e.target.playVideo();
+                        }}
+                        onEnd={(e) => {
+                            e.target.seekTo(192);
+                            e.target.playVideo();
+                        }}
+                        className="w-full h-full"
+                        iframeClassName="w-full h-full border-none"
+                    />
+                </div>
             </div>
             <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background" />
 
@@ -117,14 +124,14 @@ export default function Hero() {
                 >
                     <motion.span
                         variants={itemVariants}
-                        className="inline-block text-gold-primary tracking-[0.4em] uppercase text-sm font-bold mb-6"
+                        className="inline-block text-gold-primary tracking-[0.4em] uppercase text-sm font-bold mb-2 md:mb-6"
                     >
                         {HERO.tagline}
                     </motion.span>
 
                     <motion.h1
                         variants={itemVariants}
-                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold mb-8 leading-tight"
+                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold mb-4 md:mb-8 leading-tight"
                     >
                         {HERO.titlePart1} <br />
                         <span className="text-gold-primary">{HERO.titlePart2}</span>
@@ -132,7 +139,7 @@ export default function Hero() {
 
                     <motion.p
                         variants={itemVariants}
-                        className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto mb-12 font-light leading-relaxed"
+                        className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto mb-8 md:mb-12 font-light leading-relaxed"
                     >
                         {HERO.descriptionPart1}
                     </motion.p>
