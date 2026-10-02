@@ -109,7 +109,7 @@ export default function NotationSyncPlayer({ notation }: NotationSyncPlayerProps
             // If there are exactly 4 columns (5 parts when split by '|' if it ends with '|')
             if (parts.length === 5) {
                 return (
-                    <div key={idx} className="grid grid-cols-2 xl:grid-cols-4 gap-x-2 md:gap-x-4 leading-loose md:leading-relaxed w-full min-w-[500px] xl:min-w-0">
+                    <div key={idx} className="grid grid-cols-2 xl:grid-cols-4 gap-x-2 md:gap-x-4 leading-loose md:leading-relaxed w-full">
                         {[0, 1, 2, 3].map(i => {
                             const str = parts[i].trim();
                             const notes: string[] = [];
@@ -145,7 +145,7 @@ export default function NotationSyncPlayer({ notation }: NotationSyncPlayerProps
             // If there are exactly 3 columns (4 parts when split by '|' if it ends with '|')
             if (parts.length === 4) {
                 return (
-                    <div key={idx} className="grid grid-cols-2 xl:grid-cols-4 gap-x-2 md:gap-x-4 leading-loose md:leading-relaxed w-full min-w-[500px] xl:min-w-0">
+                    <div key={idx} className="grid grid-cols-2 xl:grid-cols-4 gap-x-2 md:gap-x-4 leading-loose md:leading-relaxed w-full">
                         {[0, 1, 2].map(i => {
                             const str = parts[i].trim();
                             const notes: string[] = [];
