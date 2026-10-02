@@ -61,14 +61,14 @@ export const NOTATIONS_DATA: Notation[] = [
             // { startTime: 30, endTime: 34, text: "+ - - P | Ṡ - N̲ (D̲P) | Ḿ - - - | - - - - |\n" },
             // { startTime: 34, endTime: 40, text: "Ḿ Ḿ Ḿ - | P - P Ḿ | P Ḿ - - | - - - - |\n" },
             // { startTime: 40, endTime: 44, text: "+ - - P | Ṡ - N̲ (D̲P) | Ḿ - - | - - - - |\n" }
-            { startTime: 6, endTime: 10, text: "[Section A]\n+ (<span class='komal'>ග</span>ම) ප ම | ම - ම ම | - (<span class='komal'>ග</span>ම) ප ම | ම ම ම ම |\n" },
-            { startTime: 10, endTime: 15, text: "+ (<span class='komal'>ග</span><span class='komal'>ග</span>) ම ම | <span class='komal'>නි</span> - - (<span class='komal'>ධ</span>ප) | ම <span class='komal'>ග</span> ම - | - - - - |\n" },
-            { startTime: 15, endTime: 20, text: "+ (<span class='komal'>ග</span>ම) ප ම | ම - ම ම | - (<span class='komal'>ග</span>ම) ප ම | ම - ම ම |\n" },
-            { startTime: 20, endTime: 25, text: "+ (<span class='komal'>ග</span><span class='komal'>ග</span>) ම ම | <span class='komal'>නි</span> - - (<span class='komal'>ධ</span>ප) | ම ප ම - | - - - - |\n\n" },
+            { startTime: 6, endTime: 10, text: "[Section A]\n+ <span class='bind'><span class='komal'>ග</span>ම</span> ප ම | ම - ම ම | - <span class='bind'><span class='komal'>ග</span>ම</span> ප ම | ම ම ම ම |\n" },
+            { startTime: 10, endTime: 15, text: "+ <span class='bind'><span class='komal'>ග</span><span class='komal'>ග</span></span> ම ම | <span class='komal'>නි</span> - - <span class='bind'><span class='komal'>ධ</span>ප</span> | ම <span class='komal'>ග</span> ම - | - - - - |\n" },
+            { startTime: 15, endTime: 20, text: "+ <span class='bind'><span class='komal'>ග</span>ම</span> ප ම | ම - ම ම | - <span class='bind'><span class='komal'>ග</span>ම</span> ප ම | ම - ම ම |\n" },
+            { startTime: 20, endTime: 25, text: "+ <span class='bind'><span class='komal'>ග</span><span class='komal'>ග</span></span> ම ම | <span class='komal'>නි</span> - - <span class='bind'><span class='komal'>ධ</span>ප</span> | ම ප ම - | - - - - |\n\n" },
             { startTime: 25, endTime: 30, text: "[Section B]\nම ම ම - | ප - ප ම | ප ම - - | - - - - |\n" },
-            { startTime: 30, endTime: 34, text: "+ - - ප | <span class='upper'>ස</span> - <span class='komal'>නි</span> (<span class='komal'>ධ</span>ප) | ම - - - | - - - - |\n" },
+            { startTime: 30, endTime: 34, text: "+ - - ප | <span class='upper'>ස</span> - <span class='komal'>නි</span> <span class='bind'><span class='komal'>ධ</span>ප</span> | ම - - - | - - - - |\n" },
             { startTime: 34, endTime: 40, text: "ම ම ම - | ප - ප ම | ප ම - - | - - - - |\n" },
-            { startTime: 40, endTime: 44, text: "+ - - ප | <span class='upper'>ස</span> - <span class='komal'>නි</span> (<span class='komal'>ධ</span>ප) | ම - - | - - - - |\n" }
+            { startTime: 40, endTime: 44, text: "+ - - ප | <span class='upper'>ස</span> - <span class='komal'>නි</span> <span class='bind'><span class='komal'>ධ</span>ප</span> | ම - - | - - - - |\n" }
         ],
     }
 ];

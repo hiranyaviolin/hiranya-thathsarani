@@ -109,18 +109,72 @@ export default function NotationSyncPlayer({ notation }: NotationSyncPlayerProps
             // If there are exactly 4 columns (5 parts when split by '|' if it ends with '|')
             if (parts.length === 5) {
                 return (
-                    <div key={idx} className="leading-loose md:leading-relaxed">
-                        <span className="block md:inline whitespace-nowrap md:whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: `${parts[0]}|${parts[1]}|` }} />
-                        <span className="block md:inline whitespace-nowrap md:whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: `${parts[2].replace(/^\s+/, '')}|${parts[3]}|` }} />
+                    <div key={idx} className="grid grid-cols-2 xl:grid-cols-4 gap-x-2 md:gap-x-4 leading-loose md:leading-relaxed w-full min-w-[500px] xl:min-w-0">
+                        {[0, 1, 2, 3].map(i => {
+                            const str = parts[i].trim();
+                            const notes: string[] = [];
+                            let current = '';
+                            let insideTag = false;
+                            for (let j = 0; j < str.length; j++) {
+                                if (str[j] === '<') insideTag = true;
+                                else if (str[j] === '>') insideTag = false;
+                                
+                                if (!insideTag && (str[j] === ' ' || str[j] === '\t')) {
+                                    if (current) notes.push(current);
+                                    current = '';
+                                } else {
+                                    current += str[j];
+                                }
+                            }
+                            if (current) notes.push(current);
+
+                            return (
+                                <div key={i} className="flex justify-between items-center">
+                                    <div className="grid grid-cols-4 w-full gap-1">
+                                        {notes.map((note, nIdx) => (
+                                            <div key={nIdx} className="truncate overflow-visible text-center" dangerouslySetInnerHTML={{ __html: note }} />
+                                        ))}
+                                    </div>
+                                    <span className="text-white/30 ml-2 shrink-0">|</span>
+                                </div>
+                            );
+                        })}
                     </div>
                 );
             }
             // If there are exactly 3 columns (4 parts when split by '|' if it ends with '|')
             if (parts.length === 4) {
                 return (
-                    <div key={idx} className="leading-loose md:leading-relaxed">
-                        <span className="block md:inline whitespace-nowrap md:whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: `${parts[0]}|${parts[1]}|` }} />
-                        <span className="block md:inline whitespace-nowrap md:whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: `${parts[2].replace(/^\s+/, '')}|` }} />
+                    <div key={idx} className="grid grid-cols-2 xl:grid-cols-4 gap-x-2 md:gap-x-4 leading-loose md:leading-relaxed w-full min-w-[500px] xl:min-w-0">
+                        {[0, 1, 2].map(i => {
+                            const str = parts[i].trim();
+                            const notes: string[] = [];
+                            let current = '';
+                            let insideTag = false;
+                            for (let j = 0; j < str.length; j++) {
+                                if (str[j] === '<') insideTag = true;
+                                else if (str[j] === '>') insideTag = false;
+                                
+                                if (!insideTag && (str[j] === ' ' || str[j] === '\t')) {
+                                    if (current) notes.push(current);
+                                    current = '';
+                                } else {
+                                    current += str[j];
+                                }
+                            }
+                            if (current) notes.push(current);
+
+                            return (
+                                <div key={i} className="flex justify-between items-center">
+                                    <div className="grid grid-cols-4 w-full gap-1">
+                                        {notes.map((note, nIdx) => (
+                                            <div key={nIdx} className="truncate overflow-visible text-center" dangerouslySetInnerHTML={{ __html: note }} />
+                                        ))}
+                                    </div>
+                                    <span className="text-white/30 ml-2 shrink-0">|</span>
+                                </div>
+                            );
+                        })}
                     </div>
                 );
             }
@@ -184,7 +238,7 @@ export default function NotationSyncPlayer({ notation }: NotationSyncPlayerProps
 
                     <div
                         ref={containerRef}
-                        className="relative bg-background/40 rounded-xl p-6 md:p-8 border border-white/5 font-mono text-xs sm:text-sm md:text-base leading-relaxed text-foreground/80 max-h-[35vh] lg:max-h-[50vh] overflow-y-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                        className="relative bg-background/40 rounded-xl p-6 md:p-8 border border-white/5 font-mono text-xs sm:text-sm md:text-base leading-relaxed text-foreground/80 max-h-[35vh] lg:max-h-[50vh] overflow-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
                     >
                         {notation.notationLines.map((line, index) => {
                             const isActive = index === activeIndex;
