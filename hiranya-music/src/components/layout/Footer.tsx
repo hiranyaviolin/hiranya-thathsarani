@@ -105,20 +105,34 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Newsletter (Simplified) */}
+                    {/* YouTube Subscribe */}
                     <div>
-                        <h4 className="text-gold-primary font-serif font-bold mb-6 uppercase tracking-wider text-sm">{FOOTER.newsletterTitle}</h4>
-                        <p className="text-foreground/60 text-sm mb-4">{FOOTER.newsletterText}</p>
-                        <div className="flex flex-col space-y-2">
-                            <input
-                                suppressHydrationWarning
-                                type="email"
-                                placeholder={FOOTER.newsletterPlaceholder}
-                                className="bg-background border border-gold-primary/20 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-gold-primary"
-                            />
-                            <button suppressHydrationWarning className="bg-gold-primary text-background font-bold py-2 rounded-lg text-sm hover:bg-gold-secondary transition-all">
-                                {FOOTER.newsletterSubscribe}
-                            </button>
+                        <h4 className="text-gold-primary font-serif font-bold mb-6 uppercase tracking-wider text-sm">{FOOTER.youtubeTitle}</h4>
+                        <p className="text-foreground/60 text-sm mb-4">{FOOTER.youtubeText}</p>
+                        <div className="flex flex-col space-y-3">
+                            <Link href={VARIABLES.youtubeUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full bg-[#FF0000] text-white font-bold py-3 rounded-xl text-sm hover:bg-[#CC0000] transition-all gap-2 shadow-[0_4px_14px_0_rgba(255,0,0,0.39)]">
+                                <Youtube size={20} />
+                                {FOOTER.youtubeSubscribeBtn}
+                            </Link>
+                            <div className="pt-2">
+                                <p className="text-foreground/50 text-[11px] uppercase tracking-widest mb-3 font-semibold">{FOOTER.socialText}</p>
+                                <div className="flex gap-2">
+                                    <Link href={VARIABLES.instagramUrl} target="_blank" rel="noopener noreferrer" className="flex-1 inline-flex items-center justify-center bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white font-bold py-2.5 rounded-xl text-[10px] sm:text-xs hover:opacity-90 transition-all gap-1 shadow-[0_4px_14px_0_rgba(220,39,67,0.39)]">
+                                        <Instagram size={14} />
+                                        Insta
+                                    </Link>
+                                    <Link href={VARIABLES.tiktokUrl} target="_blank" rel="noopener noreferrer" className="flex-1 inline-flex items-center justify-center bg-[#010101] border border-white/10 text-white font-bold py-2.5 rounded-xl text-[10px] sm:text-xs hover:bg-[#111111] transition-all gap-1 shadow-lg hover:border-white/20">
+                                        <svg className="w-[14px] h-[14px]" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z" />
+                                        </svg>
+                                        TikTok
+                                    </Link>
+                                    <Link href={VARIABLES.facebookUrl} target="_blank" rel="noopener noreferrer" className="flex-1 inline-flex items-center justify-center bg-[#1877F2] text-white font-bold py-2.5 rounded-xl text-[10px] sm:text-xs hover:bg-[#166FE5] transition-all gap-1 shadow-[0_4px_14px_0_rgba(24,119,242,0.39)]">
+                                        <Facebook size={14} fill="currentColor" strokeWidth={0} />
+                                        FB
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
